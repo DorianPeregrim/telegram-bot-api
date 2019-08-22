@@ -1,0 +1,6 @@
+php:
+  image: dorianperegrim/laravel-php:7.2-cli
+  volumes:
+    - .:/var/www
+  working_dir: /var/www
+  command: sleep 1d
