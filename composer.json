@@ -1,23 +1,29 @@
 {
-    "name": "dorianperegrim/telegram-bot-api",
-    "description": "Telegram bot api library",
-    "type": "library",
-    "keywords": ["telegram", "bot", "api"],
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Dorian Peregrim",
-            "email": "bastion.siege@gmail.com"
-        }
-    ],
-    "require": {
-        "php": ">=7.2",
-        "guzzlehttp/guzzle": "^6.3",
-        "netresearch/jsonmapper": "^1.6"
-    },
-    "autoload": {
-        "psr-4": {
-            "TelegramBotApi\\": "src/"
-        }
+  "name": "dorianperegrim/telegram-bot-api",
+  "description": "Telegram bot api library",
+  "type": "library",
+  "keywords": [
+    "telegram",
+    "bot",
+    "api"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Dorian Peregrim",
+      "email": "bastion.siege@gmail.com"
     }
+  ],
+  "require": {
+    "php": "^7.4",
+    "guzzlehttp/guzzle": "^6.3",
+    "ext-json": "*"
+  },
+  "require-dev": {
+  },
+  "autoload": {
+    "psr-4": {
+      "TelegramBotApi\\": "src/"
+    }
+  }
 }

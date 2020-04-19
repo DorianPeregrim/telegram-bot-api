@@ -1,5 +1,5 @@
 php:
-  image: dorianperegrim/laravel-php:7.2-cli
+  image: dorianperegrim/laravel-php:7.4-cli
   volumes:
     - .:/var/www
   working_dir: /var/www

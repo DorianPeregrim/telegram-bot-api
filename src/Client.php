@@ -2,18 +2,82 @@
 
 namespace TelegramBotApi;
 
+use BadMethodCallException;
 use Exception;
 use GuzzleHttp\Exception\GuzzleException;
-use JsonMapper;
-use stdClass;
 use TelegramBotApi\Exceptions\TelegramException;
-use TelegramBotApi\Types\Message;
-use TelegramBotApi\Types\StickerSet;
-use TelegramBotApi\Types\Update;
-use TelegramBotApi\Types\User;
 
 /**
  * Class Client
+ *
+ * @method array getUpdates(array $params)
+ * @method array setWebhook(array $params)
+ * @method array deleteWebhook()
+ * @method array getWebhookInfo()
+ * @method array getMe()
+ * @method array sendMessage(array $params)
+ * @method array forwardMessage(array $params)
+ * @method array sendPhoto(array $params)
+ * @method array sendAudio(array $params)
+ * @method array sendDocument(array $params)
+ * @method array sendVideo(array $params)
+ * @method array sendAnimation(array $params)
+ * @method array sendVoice(array $params)
+ * @method array sendVideoNote(array $params)
+ * @method array sendMediaGroup(array $params)
+ * @method array sendLocation(array $params)
+ * @method array editMessageLiveLocation(array $params)
+ * @method array stopMessageLiveLocation(array $params)
+ * @method array sendVenue(array $params)
+ * @method array sendContact(array $params)
+ * @method array sendPoll(array $params)
+ * @method array sendDice(array $params)
+ * @method array sendChatAction(array $params)
+ * @method array getUserProfilePhotos(array $params)
+ * @method array getFile(array $params)
+ * @method array kickChatMember(array $params)
+ * @method array unbanChatMember(array $params)
+ * @method array restrictChatMember(array $params)
+ * @method array promoteChatMember(array $params)
+ * @method array setChatAdministratorCustomTitle(array $params)
+ * @method array setChatPermissions(array $params)
+ * @method array exportChatInviteLink(array $params)
+ * @method array setChatPhoto(array $params)
+ * @method array deleteChatPhoto(array $params)
+ * @method array setChatTitle(array $params)
+ * @method array setChatDescription(array $params)
+ * @method array pinChatMessage(array $params)
+ * @method array unpinChatMessage(array $params)
+ * @method array leaveChat(array $params)
+ * @method array getChat(array $params)
+ * @method array getChatAdministrators(array $params)
+ * @method array getChatMembersCount(array $params)
+ * @method array getChatMember(array $params)
+ * @method array setChatStickerSet(array $params)
+ * @method array deleteChatStickerSet(array $params)
+ * @method array answerCallbackQuery(array $params)
+ * @method array setMyCommands(array $params)
+ * @method array getMyCommands()
+ * @method array editMessageText(array $params)
+ * @method array editMessageCaption(array $params)
+ * @method array editMessageMedia(array $params)
+ * @method array editMessageReplyMarkup(array $params)
+ * @method array stopPoll(array $params)
+ * @method array deleteMessage(array $params)
+ * @method array sendSticker(array $params)
+ * @method array getStickerSet(array $params)
+ * @method array uploadStickerFile(array $params)
+ * @method array createNewStickerSet(array $params)
+ * @method array addStickerToSet(array $params)
+ * @method array setStickerPositionInSet(array $params)
+ * @method array deleteStickerFromSet(array $params)
+ * @method array setStickerSetThumb(array $params)
+ * @method array sendInvoice(array $params)
+ * @method array answerShippingQuery(array $params)
+ * @method array answerPreCheckoutQuery(array $params)
+ * @method array sendGame(array $params)
+ * @method array setGameScore(array $params)
+ * @method array getGameHighScores(array $params)
  *
  * @package TelegramBotApi
  */
@@ -24,20 +88,86 @@ class Client
     const PARSE_MODE_MARKDOWN = 'Markdown';
     const PARSE_MODE_HTML     = 'HTML';
 
+    private const AVAILABLE_METHODS = [
+        'getUpdates',
+        'setWebhook',
+        'deleteWebhook',
+        'getWebhookInfo',
+        'getMe',
+        'sendMessage',
+        'forwardMessage',
+        'sendPhoto',
+        'sendAudio',
+        'sendDocument',
+        'sendVideo',
+        'sendAnimation',
+        'sendVoice',
+        'sendVideoNote',
+        'sendMediaGroup',
+        'sendLocation',
+        'editMessageLiveLocation',
+        'stopMessageLiveLocation',
+        'sendVenue',
+        'sendContact',
+        'sendPoll',
+        'sendDice',
+        'sendChatAction',
+        'getUserProfilePhotos',
+        'getFile',
+        'kickChatMember',
+        'unbanChatMember',
+        'restrictChatMember',
+        'promoteChatMember',
+        'setChatAdministratorCustomTitle',
+        'setChatPermissions',
+        'exportChatInviteLink',
+        'setChatPhoto',
+        'deleteChatPhoto',
+        'setChatTitle',
+        'setChatDescription',
+        'pinChatMessage',
+        'unpinChatMessage',
+        'leaveChat',
+        'getChat',
+        'getChatAdministrators',
+        'getChatMembersCount',
+        'getChatMember',
+        'setChatStickerSet',
+        'deleteChatStickerSet',
+        'answerCallbackQuery',
+        'setMyCommands',
+        'getMyCommands',
+        'editMessageText',
+        'editMessageCaption',
+        'editMessageMedia',
+        'editMessageReplyMarkup',
+        'stopPoll',
+        'deleteMessage',
+        'sendSticker',
+        'getStickerSet',
+        'uploadStickerFile',
+        'createNewStickerSet',
+        'addStickerToSet',
+        'setStickerPositionInSet',
+        'deleteStickerFromSet',
+        'setStickerSetThumb',
+        'sendInvoice',
+        'answerShippingQuery',
+        'answerPreCheckoutQuery',
+        'sendGame',
+        'setGameScore',
+        'getGameHighScores',
+    ];
+
     /**
      * @var string
      */
-    private $apiUrl;
+    private string $apiUrl;
 
     /**
      * @var \GuzzleHttp\Client
      */
-    private $httpClient;
-
-    /**
-     * @var JsonMapper
-     */
-    private $jsonMapper;
+    private \GuzzleHttp\Client $httpClient;
 
     /**
      * Client constructor.
@@ -48,106 +178,46 @@ class Client
     {
         $this->apiUrl = sprintf(self::API_URL_TMPL, $token);
         $this->httpClient = new \GuzzleHttp\Client(['base_uri' => $this->apiUrl]);
-        $this->jsonMapper = new JsonMapper();
-    }
-
-    /**
-     * @return User
-     * @throws TelegramException
-     */
-    public function getMe(): User
-    {
-        $response = $this->makeRequest('getMe');
-
-        return $this->mapJsonToObject($response->result, User::class);
-    }
-
-    /**
-     * @param array $params
-     *
-     * @return Message
-     * @throws TelegramException
-     */
-    public function sendMessage(array $params): Message
-    {
-        $response = $this->makeRequest('sendMessage', $params);
-
-        return $this->mapJsonToObject($response->result, Message::class);
-    }
-
-    /**
-     * @param array $params
-     *
-     * @return array
-     * @throws TelegramException
-     */
-    public function getUpdates(array $params = []): array
-    {
-        $response = $this->makeRequest('getUpdates', $params);
-
-        return $this->mapJsonToArrayObjects($response->result, Update::class);
-    }
-
-    /**
-     * @param array $params
-     *
-     * @return bool
-     * @throws TelegramException
-     */
-    public function setWebhook(array $params): bool
-    {
-        $response = $this->makeRequest('setWebhook', $params);
-
-        return $response->result;
-    }
-
-    /**
-     * @return bool
-     * @throws TelegramException
-     */
-    public function deleteWebhook(): bool
-    {
-        $response = $this->makeRequest('deleteWebhook');
-
-        return $response->result;
-    }
-
-    /**
-     * @param $name
-     *
-     * @return StickerSet
-     * @throws TelegramException
-     */
-    public function getStickerSet(string $name): StickerSet
-    {
-        $response = $this->makeRequest('getStickerSet', ['name' => $name]);
-
-        return $this->mapJsonToObject($response->result, StickerSet::class);
-    }
-
-    /**
-     * @param array $params
-     *
-     * @return mixed
-     * @throws TelegramException
-     */
-    public function sendSticker(array $params)
-    {
-        $response = $this->makeRequest('sendSticker', $params);
-
-        return $this->mapJsonToObject($response->result, Message::class);
     }
 
     /**
      * @param string $method
      * @param array  $params
      *
-     * @return stdClass
+     * @return array
+     * @throws BadMethodCallException|TelegramException
+     */
+    public function __call(string $method, array $params): array
+    {
+        if ($this->unavailableMethod($method)) {
+            throw new BadMethodCallException();
+        }
+
+        return $this->makeRequest($method, $params[0] ?? []);
+
+    }
+
+    /**
+     * @param string $method
+     *
+     * @return bool
+     */
+    private function unavailableMethod(string $method): bool
+    {
+        return !in_array($method, self::AVAILABLE_METHODS);
+    }
+
+    /**
+     * @param string $method
+     * @param array  $params
+     *
+     * @return array
      * @throws TelegramException
      */
-    private function makeRequest(string $method, array $params = []): stdClass
+    private function makeRequest(string $method, array $params = []): array
     {
         $options = [];
+
         if (!empty($params)) {
             $options['form_params'] = $params;
         }
@@ -158,44 +228,6 @@ class Client
             throw new TelegramException($e->getMessage(), $e->getCode(), $e->getPrevious());
         }
 
-        $response = json_decode($jsonResponse);
-
-        return $response;
-    }
-
-    /**
-     * @param object|array $response
-     * @param string       $class
-     *
-     * @return mixed
-     * @throws TelegramException
-     */
-    private function mapJsonToObject(object $response, string $class)
-    {
-        try {
-            $mapped = $this->jsonMapper->map($response, new $class());
-        } catch (Exception $e) {
-            throw new TelegramException($e->getMessage(), $e->getCode(), $e->getPrevious());
-        }
-
-        return $mapped;
-    }
-
-    /**
-     * @param object|array $response
-     * @param string       $class
-     *
-     * @return mixed
-     * @throws TelegramException
-     */
-    private function mapJsonToArrayObjects(array $response, string $class)
-    {
-        try {
-            $mapped = $this->jsonMapper->mapArray($response, [], $class);
-        } catch (Exception $e) {
-            throw new TelegramException($e->getMessage(), $e->getCode(), $e->getPrevious());
-        }
-
-        return $mapped;
+        return json_decode($jsonResponse, true);
     }
 }
