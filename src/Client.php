@@ -5,6 +5,7 @@ namespace TelegramBotApi;
 use BadMethodCallException;
 use Exception;
 use GuzzleHttp\Exception\GuzzleException;
+use GuzzleHttp\Exception\RequestException;
 use TelegramBotApi\Exceptions\TelegramException;
 
 /**
@@ -212,6 +213,7 @@ class Client
      * @param array  $params
      *
      * @return array
+     * @throws GuzzleException
      * @throws TelegramException
      */
     private function makeRequest(string $method, array $params = []): array
@@ -224,7 +226,9 @@ class Client
 
         try {
             $jsonResponse = $this->httpClient->request('POST', $method, $options)->getBody()->getContents();
-        } catch (Exception | GuzzleException $e) {
+        } catch (RequestException $e) {
+            $jsonResponse = $e->getResponse()->getBody()->getContents();
+        } catch (Exception $e) {
             throw new TelegramException($e->getMessage(), $e->getCode(), $e->getPrevious());
         }
 
