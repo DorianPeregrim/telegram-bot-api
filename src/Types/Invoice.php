@@ -12,27 +12,27 @@ class Invoice
     /**
      * @var string
      */
-    private $title;
+    private string $title;
 
     /**
      * @var string
      */
-    private $description;
+    private string $description;
 
     /**
      * @var string
      */
-    private $startParameter;
+    private string $startParameter;
 
     /**
      * @var string
      */
-    private $currency;
+    private string $currency;
 
     /**
      * @var int
      */
-    private $totalAmount;
+    private int $totalAmount;
 
     /**
      * @return string

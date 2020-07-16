@@ -12,22 +12,22 @@ class LoginUrl
     /**
      * @var string
      */
-    private $url;
+    private string $url;
 
     /**
      * @var string
      */
-    private $forwardText;
+    private string $forwardText;
 
     /**
      * @var string
      */
-    private $botUsername;
+    private string $botUsername;
 
     /**
      * @var bool
      */
-    private $requestWriteAccess;
+    private bool $requestWriteAccess;
 
     /**
      * @return string

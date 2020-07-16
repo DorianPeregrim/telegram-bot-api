@@ -12,27 +12,27 @@ class VideoNote
     /**
      * @var string
      */
-    private $fileId;
+    private string $fileId;
 
     /**
      * @var int
      */
-    private $length;
+    private int $length;
 
     /**
      * @var int
      */
-    private $duration;
+    private int $duration;
 
     /**
      * @var PhotoSize
      */
-    private $thumb;
+    private PhotoSize $thumb;
 
     /**
      * @var int
      */
-    private $fileSize;
+    private int $fileSize;
 
     /**
      * @return string

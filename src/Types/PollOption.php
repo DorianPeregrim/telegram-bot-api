@@ -12,12 +12,12 @@ class PollOption
     /**
      * @var string
      */
-    private $text;
+    private string $text;
 
     /**
      * @var int
      */
-    private $voterCount;
+    private int $voterCount;
 
     /**
      * @return string

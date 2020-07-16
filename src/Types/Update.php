@@ -12,57 +12,57 @@ class Update
     /**
      * @var int
      */
-    private $updateId;
+    private int $updateId;
 
     /**
      * @var Message
      */
-    private $message;
+    private Message $message;
 
     /**
      * @var Message
      */
-    private $editedMessage;
+    private Message $editedMessage;
 
     /**
      * @var Message
      */
-    private $channelPost;
+    private Message $channelPost;
 
     /**
      * @var Message
      */
-    private $editedChannelPost;
+    private Message $editedChannelPost;
 
     /**
      * @var InlineQuery
      */
-    private $inlineQuery;
+    private InlineQuery $inlineQuery;
 
     /**
      * @var ChosenInlineResult
      */
-    private $chosenInlineResult;
+    private ChosenInlineResult $chosenInlineResult;
 
     /**
      * @var CallbackQuery
      */
-    private $callbackQuery;
+    private CallbackQuery $callbackQuery;
 
     /**
      * @var ShippingQuery
      */
-    private $shippingQuery;
+    private ShippingQuery $shippingQuery;
 
     /**
      * @var PreCheckoutQuery
      */
-    private $preCheckoutQuery;
+    private PreCheckoutQuery $preCheckoutQuery;
 
     /**
      * @var Poll
      */
-    private $poll;
+    private Poll $poll;
 
     /**
      * @return int

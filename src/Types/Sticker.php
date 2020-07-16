@@ -27,12 +27,12 @@ class Sticker
     /**
      * @var bool
      */
-    private $isAnimated;
+    private bool $isAnimated;
 
     /**
      * @var PhotoSize
      */
-    private $thumb;
+    private PhotoSize $thumb;
 
     /**
      * @var
@@ -47,7 +47,7 @@ class Sticker
     /**
      * @var MaskPosition
      */
-    private $maskPosition;
+    private MaskPosition $maskPosition;
 
     /**
      * @var

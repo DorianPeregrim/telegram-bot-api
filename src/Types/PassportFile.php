@@ -12,17 +12,17 @@ class PassportFile
     /**
      * @var string
      */
-    private $fileId;
+    private string $fileId;
 
     /**
      * @var int
      */
-    private $fileSize;
+    private int $fileSize;
 
     /**
      * @var int
      */
-    private $fileDate;
+    private int $fileDate;
 
     /**
      * @return string

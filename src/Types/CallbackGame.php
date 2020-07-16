@@ -12,37 +12,37 @@ class CallbackGame
     /**
      * @var int
      */
-    private $userId;
+    private int $userId;
 
     /**
      * @var int
      */
-    private $score;
+    private int $score;
 
     /**
      * @var bool
      */
-    private $force;
+    private bool $force;
 
     /**
      * @var bool
      */
-    private $disableEditMessage;
+    private bool $disableEditMessage;
 
     /**
      * @var int
      */
-    private $chatId;
+    private int $chatId;
 
     /**
      * @var int
      */
-    private $messageId;
+    private int $messageId;
 
     /**
      * @var string
      */
-    private $inlineMessageId;
+    private string $inlineMessageId;
 
     /**
      * @return int

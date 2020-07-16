@@ -12,27 +12,27 @@ class Document
     /**
      * @var string
      */
-    private $fileId;
+    private string $fileId;
 
     /**
      * @var PhotoSize
      */
-    private $thumb;
+    private PhotoSize $thumb;
 
     /**
      * @var string
      */
-    private $fileName;
+    private string $fileName;
 
     /**
      * @var string
      */
-    private $mimeType;
+    private string $mimeType;
 
     /**
      * @var int
      */
-    private $fileSize;
+    private int $fileSize;
 
     /**
      * @return string

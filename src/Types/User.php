@@ -12,32 +12,32 @@ class User
     /**
      * @var int
      */
-    private $id;
+    private int $id;
 
     /**
      * @var bool
      */
-    private $isBot;
+    private bool $isBot;
 
     /**
      * @var string
      */
-    private $firstName;
+    private string $firstName;
 
     /**
      * @var string
      */
-    private $lastName;
+    private string $lastName;
 
     /**
      * @var string
      */
-    private $username;
+    private string $username;
 
     /**
      * @var string
      */
-    private $languageCode;
+    private string $languageCode;
 
     /**
      * @return int

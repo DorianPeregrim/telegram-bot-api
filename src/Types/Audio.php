@@ -12,37 +12,37 @@ class Audio
     /**
      * @var string
      */
-    private $fileId;
+    private string $fileId;
 
     /**
      * @var int
      */
-    private $duration;
+    private int $duration;
 
     /**
      * @var string
      */
-    private $performer;
+    private string $performer;
 
     /**
      * @var string
      */
-    private $title;
+    private string $title;
 
     /**
      * @var string
      */
-    private $mimeType;
+    private string $mimeType;
 
     /**
      * @var int
      */
-    private $fileSize;
+    private int $fileSize;
 
     /**
      * @var PhotoSize
      */
-    private $thumb;
+    private PhotoSize $thumb;
 
     /**
      * @return string

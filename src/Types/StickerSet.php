@@ -12,27 +12,27 @@ class StickerSet
     /**
      * @var string
      */
-    private $name;
+    private string $name;
 
     /**
      * @var string
      */
-    private $title;
+    private string $title;
 
     /**
      * @var bool
      */
-    private $isAnimated;
+    private bool $isAnimated;
 
     /**
      * @var bool
      */
-    private $containsMasks;
+    private bool $containsMasks;
 
     /**
      * @var Sticker[]
      */
-    private $stickers;
+    private array $stickers;
 
     /**
      * @return string

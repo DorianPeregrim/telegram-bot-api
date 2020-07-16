@@ -12,12 +12,12 @@ class PassportData
     /**
      * @var EncryptedPassportElement[]
      */
-    private $data;
+    private array $data;
 
     /**
      * @var EncryptedCredentials
      */
-    private $credentials;
+    private EncryptedCredentials $credentials;
 
     /**
      * @return EncryptedPassportElement[]

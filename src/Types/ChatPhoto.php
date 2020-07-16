@@ -12,12 +12,12 @@ class ChatPhoto
     /**
      * @var string
      */
-    private $smallFileId;
+    private string $smallFileId;
 
     /**
      * @var string
      */
-    private $bigFileId;
+    private string $bigFileId;
 
     /**
      * @return string

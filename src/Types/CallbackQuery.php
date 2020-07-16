@@ -12,37 +12,37 @@ class CallbackQuery
     /**
      * @var string
      */
-    private $id;
+    private string $id;
 
     /**
      * @var User
      */
-    private $from;
+    private User $from;
 
     /**
      * @var Message
      */
-    private $message;
+    private Message $message;
 
     /**
      * @var string
      */
-    private $inlineMessageId;
+    private string $inlineMessageId;
 
     /**
      * @var string
      */
-    private $chatInstance;
+    private string $chatInstance;
 
     /**
      * @var string
      */
-    private $data;
+    private string $data;
 
     /**
      * @var string
      */
-    private $gameShortName;
+    private string $gameShortName;
 
     /**
      * @return string

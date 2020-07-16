@@ -12,52 +12,52 @@ class EncryptedPassportElement
     /**
      * @var string
      */
-    private $type;
+    private string $type;
 
     /**
      * @var string
      */
-    private $data;
+    private string $data;
 
     /**
      * @var string
      */
-    private $phoneNumber;
+    private string $phoneNumber;
 
     /**
      * @var string
      */
-    private $email;
+    private string $email;
 
     /**
      * @var PassportFile[]
      */
-    private $files;
+    private array $files;
 
     /**
      * @var PassportFile
      */
-    private $frontSide;
+    private PassportFile $frontSide;
 
     /**
      * @var PassportFile
      */
-    private $reverse_side;
+    private PassportFile $reverse_side;
 
     /**
      * @var PassportFile
      */
-    private $selfie;
+    private PassportFile $selfie;
 
     /**
      * @var PassportFile[]
      */
-    private $translation;
+    private array $translation;
 
     /**
      * @var string
      */
-    private $hash;
+    private string $hash;
 
     /**
      * @return string

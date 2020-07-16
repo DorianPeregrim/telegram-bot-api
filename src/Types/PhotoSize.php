@@ -12,22 +12,22 @@ class PhotoSize
     /**
      * @var string
      */
-    private $fileId;
+    private string $fileId;
 
     /**
      * @var int
      */
-    private $width;
+    private int $width;
 
     /**
      * @var int
      */
-    private $height;
+    private int $height;
 
     /**
      * @var int
      */
-    private $fileSize;
+    private int $fileSize;
 
     /**
      * @return string

@@ -12,237 +12,237 @@ class Message
     /**
      * @var int
      */
-    private $messageId;
+    private int $messageId;
 
     /**
      * @var User
      */
-    private $from;
+    private User $from;
 
     /**
      * @var int
      */
-    private $date;
+    private int $date;
 
     /**
      * @var Chat
      */
-    private $chat;
+    private Chat $chat;
 
     /**
      * @var User
      */
-    private $forwardFrom;
+    private User $forwardFrom;
 
     /**
      * @var Chat
      */
-    private $forwardFromChat;
+    private Chat $forwardFromChat;
 
     /**
      * @var int
      */
-    private $forwardFromMessageId;
+    private int $forwardFromMessageId;
 
     /**
      * @var string
      */
-    private $forwardSignature;
+    private string $forwardSignature;
 
     /**
      * @var string
      */
-    private $forwardSenderName;
+    private string $forwardSenderName;
 
     /**
      * @var int
      */
-    private $forwardDate;
+    private int $forwardDate;
 
     /**
      * @var Message
      */
-    private $replyToMessage;
+    private Message $replyToMessage;
 
     /**
      * @var int
      */
-    private $editDate;
+    private int $editDate;
 
     /**
      * @var string
      */
-    private $mediaGroupId;
+    private string $mediaGroupId;
 
     /**
      * @var string
      */
-    private $authorSignature;
+    private string $authorSignature;
 
     /**
      * @var string
      */
-    private $text;
+    private string $text;
 
     /**
      * @var MessageEntity[]
      */
-    private $entities;
+    private array $entities;
 
     /**
      * @var MessageEntity[]
      */
-    private $captionEntities;
+    private array $captionEntities;
 
     /**
      * @var Audio
      */
-    private $audio;
+    private Audio $audio;
 
     /**
      * @var Document
      */
-    private $document;
+    private Document $document;
 
     /**
      * @var Animation
      */
-    private $animation;
+    private Animation $animation;
 
     /**
      * @var Game
      */
-    private $game;
+    private Game $game;
 
     /**
      * @var PhotoSize[]
      */
-    private $photo;
+    private array $photo;
 
     /**
      * @var Sticker
      */
-    private $sticker;
+    private Sticker $sticker;
 
     /**
      * @var Video
      */
-    private $video;
+    private Video $video;
 
     /**
      * @var Voice
      */
-    private $voice;
+    private Voice $voice;
 
     /**
      * @var VideoNote
      */
-    private $videoNote;
+    private VideoNote $videoNote;
 
     /**
      * @var string
      */
-    private $caption;
+    private string $caption;
 
     /**
      * @var Contact
      */
-    private $contact;
+    private Contact $contact;
 
     /**
      * @var Location
      */
-    private $location;
+    private Location $location;
 
     /**
      * @var Venue
      */
-    private $venue;
+    private Venue $venue;
 
     /**
      * @var Poll
      */
-    private $poll;
+    private Poll $poll;
 
     /**
      * @var User[]
      */
-    private $newChatMembers;
+    private array $newChatMembers;
 
     /**
      * @var User
      */
-    private $leftChatMember;
+    private User $leftChatMember;
 
     /**
      * @var string
      */
-    private $newChatTitle;
+    private string $newChatTitle;
 
     /**
      * @var PhotoSize[]
      */
-    private $newChatPhoto;
+    private array $newChatPhoto;
 
     /**
      * @var bool
      */
-    private $deleteChatPhoto;
+    private bool $deleteChatPhoto;
 
     /**
      * @var bool
      */
-    private $groupChatCreated;
+    private bool $groupChatCreated;
 
     /**
      * @var bool
      */
-    private $supergroupChatCreated;
+    private bool $supergroupChatCreated;
 
     /**
      * @var bool
      */
-    private $channelChatCreated;
+    private bool $channelChatCreated;
 
     /**
      * @var int
      */
-    private $migrateToChatId;
+    private int $migrateToChatId;
 
     /**
      * @var int
      */
-    private $migrateFromChatId;
+    private int $migrateFromChatId;
 
     /**
      * @var Message
      */
-    private $pinnedMessage;
+    private Message $pinnedMessage;
 
     /**
      * @var Invoice
      */
-    private $invoice;
+    private Invoice $invoice;
 
     /**
      * @var SuccessfulPayment
      */
-    private $successfulPayment;
+    private SuccessfulPayment $successfulPayment;
 
     /**
      * @var string
      */
-    private $connectedWebsite;
+    private string $connectedWebsite;
 
     /**
      * @var PassportData
      */
-    private $passportData;
+    private PassportData $passportData;
 
     /**
      * @var InlineKeyboardMarkup
      */
-    private $replyMarkup;
+    private InlineKeyboardMarkup $replyMarkup;
 
     /**
      * @return int

@@ -12,17 +12,17 @@ class KeyboardButton
     /**
      * @var string
      */
-    private $text;
+    private string $text;
 
     /**
      * @var bool
      */
-    private $requestContact;
+    private bool $requestContact;
 
     /**
      * @var bool
      */
-    private $requestLocation;
+    private bool $requestLocation;
 
     /**
      * @return string

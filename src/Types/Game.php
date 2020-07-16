@@ -12,32 +12,32 @@ class Game
     /**
      * @var string
      */
-    private $title;
+    private string $title;
 
     /**
      * @var string
      */
-    private $description;
+    private string $description;
 
     /**
      * @var PhotoSize[]
      */
-    private $photo;
+    private array $photo;
 
     /**
      * @var string
      */
-    private $text;
+    private string $text;
 
     /**
      * @var MessageEntity[]
      */
-    private $textEntities;
+    private array $textEntities;
 
     /**
      * @var Animation
      */
-    private $animation;
+    private Animation $animation;
 
     /**
      * @return string

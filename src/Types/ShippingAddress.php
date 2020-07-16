@@ -12,32 +12,32 @@ class ShippingAddress
     /**
      * @var string
      */
-    private $countryCode;
+    private string $countryCode;
 
     /**
      * @var string
      */
-    private $state;
+    private string $state;
 
     /**
      * @var string
      */
-    private $city;
+    private string $city;
 
     /**
      * @var string
      */
-    private $streetLine1;
+    private string $streetLine1;
 
     /**
      * @var string
      */
-    private $streetLine2;
+    private string $streetLine2;
 
     /**
      * @var string
      */
-    private $postCode;
+    private string $postCode;
 
     /**
      * @return string

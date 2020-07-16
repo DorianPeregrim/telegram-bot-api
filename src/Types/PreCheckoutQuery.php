@@ -12,37 +12,37 @@ class PreCheckoutQuery
     /**
      * @var string
      */
-    private $id;
+    private string $id;
 
     /**
      * @var User
      */
-    private $from;
+    private User $from;
 
     /**
      * @var string
      */
-    private $currency;
+    private string $currency;
 
     /**
      * @var int
      */
-    private $totalAmount;
+    private int $totalAmount;
 
     /**
      * @var string
      */
-    private $invoicePayload;
+    private string $invoicePayload;
 
     /**
      * @var string
      */
-    private $shippingOptionId;
+    private string $shippingOptionId;
 
     /**
      * @var OrderInfo
      */
-    private $orderInfo;
+    private OrderInfo $orderInfo;
 
     /**
      * @return string

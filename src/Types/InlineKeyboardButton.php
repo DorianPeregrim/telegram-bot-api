@@ -12,42 +12,42 @@ class InlineKeyboardButton
     /**
      * @var string
      */
-    private $text;
+    private string $text;
 
     /**
      * @var string
      */
-    private $url;
+    private string $url;
 
     /**
      * @var LoginUrl
      */
-    private $loginUrl;
+    private LoginUrl $loginUrl;
 
     /**
      * @var string
      */
-    private $callbackData;
+    private string $callbackData;
 
     /**
      * @var string
      */
-    private $switchInlineQuery;
+    private string $switchInlineQuery;
 
     /**
      * @var string
      */
-    private $switchInlineQueryCurrentChat;
+    private string $switchInlineQueryCurrentChat;
 
     /**
      * @var CallbackGame
      */
-    private $callbackGame;
+    private CallbackGame $callbackGame;
 
     /**
      * @var bool
      */
-    private $pay;
+    private bool $pay;
 
     /**
      * @return string

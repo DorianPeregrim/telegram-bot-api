@@ -12,27 +12,27 @@ class MessageEntity
     /**
      * @var string
      */
-    private $type;
+    private string $type;
 
     /**
      * @var int
      */
-    private $offset;
+    private int $offset;
 
     /**
      * @var int
      */
-    private $length;
+    private int $length;
 
     /**
      * @var string
      */
-    private $url;
+    private string $url;
 
     /**
      * @var User
      */
-    private $user;
+    private User $user;
 
     /**
      * @return string

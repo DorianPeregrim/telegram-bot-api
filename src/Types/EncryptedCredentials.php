@@ -12,17 +12,17 @@ class EncryptedCredentials
     /**
      * @var string
      */
-    private $data;
+    private string $data;
 
     /**
      * @var string
      */
-    private $hash;
+    private string $hash;
 
     /**
      * @var string
      */
-    private $secret;
+    private string $secret;
 
     /**
      * @return string

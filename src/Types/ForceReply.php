@@ -12,12 +12,12 @@ class ForceReply
     /**
      * @var bool
      */
-    private $forceReply;
+    private bool $forceReply;
 
     /**
      * @var bool
      */
-    private $selective;
+    private bool $selective;
 
     /**
      * @return bool

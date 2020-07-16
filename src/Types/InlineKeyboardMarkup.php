@@ -12,7 +12,7 @@ class InlineKeyboardMarkup
     /**
      * @var InlineKeyboardButton[][]
      */
-    private $inlineKeyboard;
+    private array $inlineKeyboard;
 
     /**
      * @return InlineKeyboardButton[][]

@@ -12,37 +12,37 @@ class SuccessfulPayment
     /**
      * @var string
      */
-    private $currency;
+    private string $currency;
 
     /**
      * @var int
      */
-    private $totalAmount;
+    private int $totalAmount;
 
     /**
      * @var string
      */
-    private $invoicePayload;
+    private string $invoicePayload;
 
     /**
      * @var string
      */
-    private $shippingOptionId;
+    private string $shippingOptionId;
 
     /**
      * @var OrderInfo
      */
-    private $orderInfo;
+    private OrderInfo $orderInfo;
 
     /**
      * @var string
      */
-    private $telegramPaymentChargeId;
+    private string $telegramPaymentChargeId;
 
     /**
      * @var string
      */
-    private $providerPaymentChargeId;
+    private string $providerPaymentChargeId;
 
     /**
      * @return string

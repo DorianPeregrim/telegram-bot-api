@@ -186,7 +186,7 @@ class Client
      * @param array  $params
      *
      * @return array
-     * @throws BadMethodCallException|TelegramException
+     * @throws BadMethodCallException|TelegramException|GuzzleException
      */
     public function __call(string $method, array $params): array
     {
@@ -213,8 +213,7 @@ class Client
      * @param array  $params
      *
      * @return array
-     * @throws GuzzleException
-     * @throws TelegramException
+     * @throws TelegramException|GuzzleException
      */
     private function makeRequest(string $method, array $params = []): array
     {

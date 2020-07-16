@@ -12,12 +12,12 @@ class Location
     /**
      * @var float
      */
-    private $longitude;
+    private float $longitude;
 
     /**
      * @var float
      */
-    private $latitude;
+    private float $latitude;
 
     /**
      * @return float

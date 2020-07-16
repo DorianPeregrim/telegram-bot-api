@@ -12,22 +12,22 @@ class MaskPosition
     /**
      * @var string
      */
-    private $point;
+    private string $point;
 
     /**
      * @var float
      */
-    private $xShift;
+    private float $xShift;
 
     /**
      * @var float
      */
-    private $yShift;
+    private float $yShift;
 
     /**
      * @var float
      */
-    private $scale;
+    private float $scale;
 
     /**
      * @return string

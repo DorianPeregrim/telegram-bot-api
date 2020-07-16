@@ -12,22 +12,22 @@ class OrderInfo
     /**
      * @var string
      */
-    private $name;
+    private string $name;
 
     /**
      * @var string
      */
-    private $phoneNumber;
+    private string $phoneNumber;
 
     /**
      * @var string
      */
-    private $email;
+    private string $email;
 
     /**
      * @var ShippingAddress
      */
-    private $shippingAddress;
+    private ShippingAddress $shippingAddress;
 
     /**
      * @return string

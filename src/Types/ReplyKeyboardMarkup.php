@@ -12,22 +12,22 @@ class ReplyKeyboardMarkup
     /**
      * @var KeyboardButton[][]
      */
-    private $keyboard;
+    private array $keyboard;
 
     /**
      * @var bool
      */
-    private $resizeKeyboard;
+    private bool $resizeKeyboard;
 
     /**
      * @var bool
      */
-    private $oneTimeKeyboard;
+    private bool $oneTimeKeyboard;
 
     /**
      * @var bool
      */
-    private $selective;
+    private bool $selective;
 
     /**
      * @return KeyboardButton[][]

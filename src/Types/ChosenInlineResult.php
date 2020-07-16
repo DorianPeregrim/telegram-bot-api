@@ -12,27 +12,27 @@ class ChosenInlineResult
     /**
      * @var string
      */
-    private $resultId;
+    private string $resultId;
 
     /**
      * @var User
      */
-    private $from;
+    private User $from;
 
     /**
      * @var Location
      */
-    private $location;
+    private Location $location;
 
     /**
      * @var string
      */
-    private $inlineMessageId;
+    private string $inlineMessageId;
 
     /**
      * @var string
      */
-    private $query;
+    private string $query;
 
     /**
      * @return string

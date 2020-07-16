@@ -12,22 +12,22 @@ class ShippingQuery
     /**
      * @var string
      */
-    private $id;
+    private string $id;
 
     /**
      * @var User
      */
-    private $from;
+    private User $from;
 
     /**
      * @var string
      */
-    private $invoicePayload;
+    private string $invoicePayload;
 
     /**
      * @var ShippingAddress
      */
-    private $shippingAddress;
+    private ShippingAddress $shippingAddress;
 
     /**
      * @return string

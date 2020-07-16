@@ -12,42 +12,42 @@ class Animation
     /**
      * @var string
      */
-    private $fileId;
+    private string $fileId;
 
     /**
      * @var int
      */
-    private $width;
+    private int $width;
 
     /**
      * @var int
      */
-    private $height;
+    private int $height;
 
     /**
      * @var int
      */
-    private $duration;
+    private int $duration;
 
     /**
      * @var PhotoSize
      */
-    private $thumb;
+    private PhotoSize $thumb;
 
     /**
      * @var string
      */
-    private $fileName;
+    private string $fileName;
 
     /**
      * @var string
      */
-    private $mimeType;
+    private string $mimeType;
 
     /**
      * @var int
      */
-    private $fileSize;
+    private int $fileSize;
 
     /**
      * @return string

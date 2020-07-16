@@ -12,22 +12,22 @@ class Voice
     /**
      * @var string
      */
-    private $fileId;
+    private string $fileId;
 
     /**
      * @var int
      */
-    private $duration;
+    private int $duration;
 
     /**
      * @var string
      */
-    private $mimeType;
+    private string $mimeType;
 
     /**
      * @var int
      */
-    private $fileSize;
+    private int $fileSize;
 
     /**
      * @return string

@@ -12,22 +12,22 @@ class Poll
     /**
      * @var string
      */
-    private $id;
+    private string $id;
 
     /**
      * @var string
      */
-    private $question;
+    private string $question;
 
     /**
      * @var PollOption[]
      */
-    private $options;
+    private array $options;
 
     /**
      * @var bool
      */
-    private $isClosed;
+    private bool $isClosed;
 
     /**
      * @return string

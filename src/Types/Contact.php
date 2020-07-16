@@ -12,27 +12,27 @@ class Contact
     /**
      * @var string
      */
-    private $phoneNumber;
+    private string $phoneNumber;
 
     /**
      * @var string
      */
-    private $firstName;
+    private string $firstName;
 
     /**
      * @var string
      */
-    private $lastName;
+    private string $lastName;
 
     /**
      * @var int
      */
-    private $userId;
+    private int $userId;
 
     /**
      * @var string
      */
-    private $vcard;
+    private string $vcard;
 
     /**
      * @return string
