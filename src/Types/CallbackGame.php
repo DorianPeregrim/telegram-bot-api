@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace TelegramBotApi\Types;
 
@@ -20,29 +22,29 @@ class CallbackGame
     private int $score;
 
     /**
-     * @var bool
+     * @var bool|null
      */
-    private bool $force;
+    private ?bool $force = null;
 
     /**
-     * @var bool
+     * @var bool|null
      */
-    private bool $disableEditMessage;
+    private ?bool $disableEditMessage = null;
 
     /**
-     * @var int
+     * @var int|null
      */
-    private int $chatId;
+    private ?int $chatId = null;
 
     /**
-     * @var int
+     * @var int|null
      */
-    private int $messageId;
+    private ?int $messageId = null;
 
     /**
-     * @var string
+     * @var string|null
      */
-    private string $inlineMessageId;
+    private ?string $inlineMessageId = null;
 
     /**
      * @return int
@@ -85,19 +87,19 @@ class CallbackGame
     }
 
     /**
-     * @return bool
+     * @return bool|null
      */
-    public function isForce(): bool
+    public function getForce(): ?bool
     {
         return $this->force;
     }
 
     /**
-     * @param bool $force
+     * @param bool|null $force
      *
      * @return CallbackGame
      */
-    public function setForce(bool $force): CallbackGame
+    public function setForce(?bool $force): CallbackGame
     {
         $this->force = $force;
 
@@ -105,19 +107,19 @@ class CallbackGame
     }
 
     /**
-     * @return bool
+     * @return bool|null
      */
-    public function isDisableEditMessage(): bool
+    public function getDisableEditMessage(): ?bool
     {
         return $this->disableEditMessage;
     }
 
     /**
-     * @param bool $disableEditMessage
+     * @param bool|null $disableEditMessage
      *
      * @return CallbackGame
      */
-    public function setDisableEditMessage(bool $disableEditMessage): CallbackGame
+    public function setDisableEditMessage(?bool $disableEditMessage): CallbackGame
     {
         $this->disableEditMessage = $disableEditMessage;
 
@@ -125,19 +127,19 @@ class CallbackGame
     }
 
     /**
-     * @return int
+     * @return int|null
      */
-    public function getChatId(): int
+    public function getChatId(): ?int
     {
         return $this->chatId;
     }
 
     /**
-     * @param int $chatId
+     * @param int|null $chatId
      *
      * @return CallbackGame
      */
-    public function setChatId(int $chatId): CallbackGame
+    public function setChatId(?int $chatId): CallbackGame
     {
         $this->chatId = $chatId;
 
@@ -145,19 +147,19 @@ class CallbackGame
     }
 
     /**
-     * @return int
+     * @return int|null
      */
-    public function getMessageId(): int
+    public function getMessageId(): ?int
     {
         return $this->messageId;
     }
 
     /**
-     * @param int $messageId
+     * @param int|null $messageId
      *
      * @return CallbackGame
      */
-    public function setMessageId(int $messageId): CallbackGame
+    public function setMessageId(?int $messageId): CallbackGame
     {
         $this->messageId = $messageId;
 
@@ -165,19 +167,19 @@ class CallbackGame
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getInlineMessageId(): string
+    public function getInlineMessageId(): ?string
     {
         return $this->inlineMessageId;
     }
 
     /**
-     * @param string $inlineMessageId
+     * @param string|null $inlineMessageId
      *
      * @return CallbackGame
      */
-    public function setInlineMessageId(string $inlineMessageId): CallbackGame
+    public function setInlineMessageId(?string $inlineMessageId): CallbackGame
     {
         $this->inlineMessageId = $inlineMessageId;
 

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace TelegramBotApi\Types;
 
@@ -25,14 +27,14 @@ class SuccessfulPayment
     private string $invoicePayload;
 
     /**
-     * @var string
+     * @var string|null
      */
-    private string $shippingOptionId;
+    private ?string $shippingOptionId = null;
 
     /**
-     * @var OrderInfo
+     * @var OrderInfo|null
      */
-    private OrderInfo $orderInfo;
+    private ?OrderInfo $orderInfo = null;
 
     /**
      * @var string
@@ -105,19 +107,19 @@ class SuccessfulPayment
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getShippingOptionId(): string
+    public function getShippingOptionId(): ?string
     {
         return $this->shippingOptionId;
     }
 
     /**
-     * @param string $shippingOptionId
+     * @param string|null $shippingOptionId
      *
      * @return SuccessfulPayment
      */
-    public function setShippingOptionId(string $shippingOptionId): SuccessfulPayment
+    public function setShippingOptionId(?string $shippingOptionId): SuccessfulPayment
     {
         $this->shippingOptionId = $shippingOptionId;
 
@@ -125,19 +127,19 @@ class SuccessfulPayment
     }
 
     /**
-     * @return OrderInfo
+     * @return OrderInfo|null
      */
-    public function getOrderInfo(): OrderInfo
+    public function getOrderInfo(): ?OrderInfo
     {
         return $this->orderInfo;
     }
 
     /**
-     * @param OrderInfo $orderInfo
+     * @param OrderInfo|null $orderInfo
      *
      * @return SuccessfulPayment
      */
-    public function setOrderInfo(OrderInfo $orderInfo): SuccessfulPayment
+    public function setOrderInfo(?OrderInfo $orderInfo): SuccessfulPayment
     {
         $this->orderInfo = $orderInfo;
 

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace TelegramBotApi\Types;
 
@@ -20,9 +22,9 @@ class InlineQuery
     private User $from;
 
     /**
-     * @var Location
+     * @var Location|null
      */
-    private Location $location;
+    private ?Location $location = null;
 
     /**
      * @var string
@@ -75,19 +77,19 @@ class InlineQuery
     }
 
     /**
-     * @return Location
+     * @return Location|null
      */
-    public function getLocation(): Location
+    public function getLocation(): ?Location
     {
         return $this->location;
     }
 
     /**
-     * @param Location $location
+     * @param Location|null $location
      *
      * @return InlineQuery
      */
-    public function setLocation(Location $location): InlineQuery
+    public function setLocation(?Location $location): InlineQuery
     {
         $this->location = $location;
 

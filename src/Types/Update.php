@@ -1,6 +1,11 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace TelegramBotApi\Types;
+
+use ReflectionException;
+use TelegramBotApi\UpdateMapper;
 
 /**
  * Class Update
@@ -15,54 +20,69 @@ class Update
     private int $updateId;
 
     /**
-     * @var Message
+     * @var Message|null
      */
-    private Message $message;
+    private ?Message $message = null;
 
     /**
-     * @var Message
+     * @var Message|null
      */
-    private Message $editedMessage;
+    private ?Message $editedMessage = null;
 
     /**
-     * @var Message
+     * @var Message|null
      */
-    private Message $channelPost;
+    private ?Message $channelPost = null;
 
     /**
-     * @var Message
+     * @var Message|null
      */
-    private Message $editedChannelPost;
+    private ?Message $editedChannelPost = null;
 
     /**
-     * @var InlineQuery
+     * @var InlineQuery|null
      */
-    private InlineQuery $inlineQuery;
+    private ?InlineQuery $inlineQuery = null;
 
     /**
-     * @var ChosenInlineResult
+     * @var ChosenInlineResult|null
      */
-    private ChosenInlineResult $chosenInlineResult;
+    private ?ChosenInlineResult $chosenInlineResult = null;
 
     /**
-     * @var CallbackQuery
+     * @var CallbackQuery|null
      */
-    private CallbackQuery $callbackQuery;
+    private ?CallbackQuery $callbackQuery = null;
 
     /**
-     * @var ShippingQuery
+     * @var ShippingQuery|null
      */
-    private ShippingQuery $shippingQuery;
+    private ?ShippingQuery $shippingQuery = null;
 
     /**
-     * @var PreCheckoutQuery
+     * @var PreCheckoutQuery|null
      */
-    private PreCheckoutQuery $preCheckoutQuery;
+    private ?PreCheckoutQuery $preCheckoutQuery = null;
 
     /**
-     * @var Poll
+     * @var Poll|null
      */
-    private Poll $poll;
+    private ?Poll $poll = null;
+
+    /**
+     * Update constructor.
+     *
+     * @param array $attributes
+     *
+     * @throws ReflectionException
+     */
+    public function __construct(array $attributes = [])
+    {
+        if (!empty($attributes)) {
+            $mapper = new UpdateMapper();
+            $mapper->map($this, $attributes);
+        }
+    }
 
     /**
      * @return int
@@ -85,19 +105,19 @@ class Update
     }
 
     /**
-     * @return Message
+     * @return Message|null
      */
-    public function getMessage(): Message
+    public function getMessage(): ?Message
     {
         return $this->message;
     }
 
     /**
-     * @param Message $message
+     * @param Message|null $message
      *
      * @return Update
      */
-    public function setMessage(Message $message): Update
+    public function setMessage(?Message $message): Update
     {
         $this->message = $message;
 
@@ -105,19 +125,19 @@ class Update
     }
 
     /**
-     * @return Message
+     * @return Message|null
      */
-    public function getEditedMessage(): Message
+    public function getEditedMessage(): ?Message
     {
         return $this->editedMessage;
     }
 
     /**
-     * @param Message $editedMessage
+     * @param Message|null $editedMessage
      *
      * @return Update
      */
-    public function setEditedMessage(Message $editedMessage): Update
+    public function setEditedMessage(?Message $editedMessage): Update
     {
         $this->editedMessage = $editedMessage;
 
@@ -125,19 +145,19 @@ class Update
     }
 
     /**
-     * @return Message
+     * @return Message|null
      */
-    public function getChannelPost(): Message
+    public function getChannelPost(): ?Message
     {
         return $this->channelPost;
     }
 
     /**
-     * @param Message $channelPost
+     * @param Message|null $channelPost
      *
      * @return Update
      */
-    public function setChannelPost(Message $channelPost): Update
+    public function setChannelPost(?Message $channelPost): Update
     {
         $this->channelPost = $channelPost;
 
@@ -145,19 +165,19 @@ class Update
     }
 
     /**
-     * @return Message
+     * @return Message|null
      */
-    public function getEditedChannelPost(): Message
+    public function getEditedChannelPost(): ?Message
     {
         return $this->editedChannelPost;
     }
 
     /**
-     * @param Message $editedChannelPost
+     * @param Message|null $editedChannelPost
      *
      * @return Update
      */
-    public function setEditedChannelPost(Message $editedChannelPost): Update
+    public function setEditedChannelPost(?Message $editedChannelPost): Update
     {
         $this->editedChannelPost = $editedChannelPost;
 
@@ -165,19 +185,19 @@ class Update
     }
 
     /**
-     * @return InlineQuery
+     * @return InlineQuery|null
      */
-    public function getInlineQuery(): InlineQuery
+    public function getInlineQuery(): ?InlineQuery
     {
         return $this->inlineQuery;
     }
 
     /**
-     * @param InlineQuery $inlineQuery
+     * @param InlineQuery|null $inlineQuery
      *
      * @return Update
      */
-    public function setInlineQuery(InlineQuery $inlineQuery): Update
+    public function setInlineQuery(?InlineQuery $inlineQuery): Update
     {
         $this->inlineQuery = $inlineQuery;
 
@@ -185,19 +205,19 @@ class Update
     }
 
     /**
-     * @return ChosenInlineResult
+     * @return ChosenInlineResult|null
      */
-    public function getChosenInlineResult(): ChosenInlineResult
+    public function getChosenInlineResult(): ?ChosenInlineResult
     {
         return $this->chosenInlineResult;
     }
 
     /**
-     * @param ChosenInlineResult $chosenInlineResult
+     * @param ChosenInlineResult|null $chosenInlineResult
      *
      * @return Update
      */
-    public function setChosenInlineResult(ChosenInlineResult $chosenInlineResult): Update
+    public function setChosenInlineResult(?ChosenInlineResult $chosenInlineResult): Update
     {
         $this->chosenInlineResult = $chosenInlineResult;
 
@@ -205,19 +225,19 @@ class Update
     }
 
     /**
-     * @return CallbackQuery
+     * @return CallbackQuery|null
      */
-    public function getCallbackQuery(): CallbackQuery
+    public function getCallbackQuery(): ?CallbackQuery
     {
         return $this->callbackQuery;
     }
 
     /**
-     * @param CallbackQuery $callbackQuery
+     * @param CallbackQuery|null $callbackQuery
      *
      * @return Update
      */
-    public function setCallbackQuery(CallbackQuery $callbackQuery): Update
+    public function setCallbackQuery(?CallbackQuery $callbackQuery): Update
     {
         $this->callbackQuery = $callbackQuery;
 
@@ -225,19 +245,19 @@ class Update
     }
 
     /**
-     * @return ShippingQuery
+     * @return ShippingQuery|null
      */
-    public function getShippingQuery(): ShippingQuery
+    public function getShippingQuery(): ?ShippingQuery
     {
         return $this->shippingQuery;
     }
 
     /**
-     * @param ShippingQuery $shippingQuery
+     * @param ShippingQuery|null $shippingQuery
      *
      * @return Update
      */
-    public function setShippingQuery(ShippingQuery $shippingQuery): Update
+    public function setShippingQuery(?ShippingQuery $shippingQuery): Update
     {
         $this->shippingQuery = $shippingQuery;
 
@@ -245,19 +265,19 @@ class Update
     }
 
     /**
-     * @return PreCheckoutQuery
+     * @return PreCheckoutQuery|null
      */
-    public function getPreCheckoutQuery(): PreCheckoutQuery
+    public function getPreCheckoutQuery(): ?PreCheckoutQuery
     {
         return $this->preCheckoutQuery;
     }
 
     /**
-     * @param PreCheckoutQuery $preCheckoutQuery
+     * @param PreCheckoutQuery|null $preCheckoutQuery
      *
      * @return Update
      */
-    public function setPreCheckoutQuery(PreCheckoutQuery $preCheckoutQuery): Update
+    public function setPreCheckoutQuery(?PreCheckoutQuery $preCheckoutQuery): Update
     {
         $this->preCheckoutQuery = $preCheckoutQuery;
 
@@ -265,19 +285,19 @@ class Update
     }
 
     /**
-     * @return Poll
+     * @return Poll|null
      */
-    public function getPoll(): Poll
+    public function getPoll(): ?Poll
     {
         return $this->poll;
     }
 
     /**
-     * @param Poll $poll
+     * @param Poll|null $poll
      *
      * @return Update
      */
-    public function setPoll(Poll $poll): Update
+    public function setPoll(?Poll $poll): Update
     {
         $this->poll = $poll;
 

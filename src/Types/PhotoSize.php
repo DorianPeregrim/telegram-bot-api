@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace TelegramBotApi\Types;
 
@@ -15,6 +17,11 @@ class PhotoSize
     private string $fileId;
 
     /**
+     * @var string
+     */
+    private string $fileUniqueId;
+
+    /**
      * @var int
      */
     private int $width;
@@ -25,9 +32,9 @@ class PhotoSize
     private int $height;
 
     /**
-     * @var int
+     * @var int|null
      */
-    private int $fileSize;
+    private ?int $fileSize = null;
 
     /**
      * @return string
@@ -47,6 +54,22 @@ class PhotoSize
         $this->fileId = $fileId;
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFileUniqueId(): string
+    {
+        return $this->fileUniqueId;
+    }
+
+    /**
+     * @param string $fileUniqueId
+     */
+    public function setFileUniqueId(string $fileUniqueId): void
+    {
+        $this->fileUniqueId = $fileUniqueId;
     }
 
     /**

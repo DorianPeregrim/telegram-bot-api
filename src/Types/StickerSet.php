@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace TelegramBotApi\Types;
 
@@ -33,6 +35,11 @@ class StickerSet
      * @var Sticker[]
      */
     private array $stickers;
+
+    /**
+     * @var PhotoSize|null
+     */
+    private ?PhotoSize $thumb = null;
 
     /**
      * @return string
@@ -130,6 +137,26 @@ class StickerSet
     public function setStickers(array $stickers): StickerSet
     {
         $this->stickers = $stickers;
+
+        return $this;
+    }
+
+    /**
+     * @return PhotoSize|null
+     */
+    public function getThumb(): ?PhotoSize
+    {
+        return $this->thumb;
+    }
+
+    /**
+     * @param PhotoSize|null $thumb
+     *
+     * @return StickerSet
+     */
+    public function setThumb(?PhotoSize $thumb): StickerSet
+    {
+        $this->thumb = $thumb;
 
         return $this;
     }

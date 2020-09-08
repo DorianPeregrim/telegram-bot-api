@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace TelegramBotApi\Types;
 
@@ -15,39 +17,39 @@ class InlineKeyboardButton
     private string $text;
 
     /**
-     * @var string
+     * @var string|null
      */
-    private string $url;
+    private ?string $url = null;
 
     /**
-     * @var LoginUrl
+     * @var LoginUrl|null
      */
-    private LoginUrl $loginUrl;
+    private ?LoginUrl $loginUrl = null;
 
     /**
-     * @var string
+     * @var string|null
      */
-    private string $callbackData;
+    private ?string $callbackData = null;
 
     /**
-     * @var string
+     * @var string|null
      */
-    private string $switchInlineQuery;
+    private ?string $switchInlineQuery = null;
 
     /**
-     * @var string
+     * @var string|null
      */
-    private string $switchInlineQueryCurrentChat;
+    private ?string $switchInlineQueryCurrentChat = null;
 
     /**
-     * @var CallbackGame
+     * @var CallbackGame|null
      */
-    private CallbackGame $callbackGame;
+    private ?CallbackGame $callbackGame = null;
 
     /**
-     * @var bool
+     * @var bool|null
      */
-    private bool $pay;
+    private ?bool $pay;
 
     /**
      * @return string
@@ -70,19 +72,19 @@ class InlineKeyboardButton
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getUrl(): string
+    public function getUrl(): ?string
     {
         return $this->url;
     }
 
     /**
-     * @param string $url
+     * @param string|null $url
      *
      * @return InlineKeyboardButton
      */
-    public function setUrl(string $url): InlineKeyboardButton
+    public function setUrl(?string $url): InlineKeyboardButton
     {
         $this->url = $url;
 
@@ -90,19 +92,19 @@ class InlineKeyboardButton
     }
 
     /**
-     * @return LoginUrl
+     * @return LoginUrl|null
      */
-    public function getLoginUrl(): LoginUrl
+    public function getLoginUrl(): ?LoginUrl
     {
         return $this->loginUrl;
     }
 
     /**
-     * @param LoginUrl $loginUrl
+     * @param LoginUrl|null $loginUrl
      *
      * @return InlineKeyboardButton
      */
-    public function setLoginUrl(LoginUrl $loginUrl): InlineKeyboardButton
+    public function setLoginUrl(?LoginUrl $loginUrl): InlineKeyboardButton
     {
         $this->loginUrl = $loginUrl;
 
@@ -110,19 +112,19 @@ class InlineKeyboardButton
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getCallbackData(): string
+    public function getCallbackData(): ?string
     {
         return $this->callbackData;
     }
 
     /**
-     * @param string $callbackData
+     * @param string|null $callbackData
      *
      * @return InlineKeyboardButton
      */
-    public function setCallbackData(string $callbackData): InlineKeyboardButton
+    public function setCallbackData(?string $callbackData): InlineKeyboardButton
     {
         $this->callbackData = $callbackData;
 
@@ -130,19 +132,19 @@ class InlineKeyboardButton
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getSwitchInlineQuery(): string
+    public function getSwitchInlineQuery(): ?string
     {
         return $this->switchInlineQuery;
     }
 
     /**
-     * @param string $switchInlineQuery
+     * @param string|null $switchInlineQuery
      *
      * @return InlineKeyboardButton
      */
-    public function setSwitchInlineQuery(string $switchInlineQuery): InlineKeyboardButton
+    public function setSwitchInlineQuery(?string $switchInlineQuery): InlineKeyboardButton
     {
         $this->switchInlineQuery = $switchInlineQuery;
 
@@ -150,19 +152,19 @@ class InlineKeyboardButton
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getSwitchInlineQueryCurrentChat(): string
+    public function getSwitchInlineQueryCurrentChat(): ?string
     {
         return $this->switchInlineQueryCurrentChat;
     }
 
     /**
-     * @param string $switchInlineQueryCurrentChat
+     * @param string|null $switchInlineQueryCurrentChat
      *
      * @return InlineKeyboardButton
      */
-    public function setSwitchInlineQueryCurrentChat(string $switchInlineQueryCurrentChat): InlineKeyboardButton
+    public function setSwitchInlineQueryCurrentChat(?string $switchInlineQueryCurrentChat): InlineKeyboardButton
     {
         $this->switchInlineQueryCurrentChat = $switchInlineQueryCurrentChat;
 
@@ -170,19 +172,19 @@ class InlineKeyboardButton
     }
 
     /**
-     * @return CallbackGame
+     * @return CallbackGame|null
      */
-    public function getCallbackGame(): CallbackGame
+    public function getCallbackGame(): ?CallbackGame
     {
         return $this->callbackGame;
     }
 
     /**
-     * @param CallbackGame $callbackGame
+     * @param CallbackGame|null $callbackGame
      *
      * @return InlineKeyboardButton
      */
-    public function setCallbackGame(CallbackGame $callbackGame): InlineKeyboardButton
+    public function setCallbackGame(?CallbackGame $callbackGame): InlineKeyboardButton
     {
         $this->callbackGame = $callbackGame;
 
@@ -190,19 +192,19 @@ class InlineKeyboardButton
     }
 
     /**
-     * @return bool
+     * @return bool|null
      */
-    public function isPay(): bool
+    public function getPay(): ?bool
     {
         return $this->pay;
     }
 
     /**
-     * @param bool $pay
+     * @param bool|null $pay
      *
      * @return InlineKeyboardButton
      */
-    public function setPay(bool $pay): InlineKeyboardButton
+    public function setPay(?bool $pay): InlineKeyboardButton
     {
         $this->pay = $pay;
 

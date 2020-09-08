@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace TelegramBotApi\Types;
 
@@ -15,19 +17,19 @@ class ReplyKeyboardMarkup
     private array $keyboard;
 
     /**
-     * @var bool
+     * @var bool|null
      */
-    private bool $resizeKeyboard;
+    private ?bool $resizeKeyboard = null;
 
     /**
-     * @var bool
+     * @var bool|null
      */
-    private bool $oneTimeKeyboard;
+    private ?bool $oneTimeKeyboard = null;
 
     /**
-     * @var bool
+     * @var bool|null
      */
-    private bool $selective;
+    private ?bool $selective = null;
 
     /**
      * @return KeyboardButton[][]
@@ -50,19 +52,19 @@ class ReplyKeyboardMarkup
     }
 
     /**
-     * @return bool
+     * @return bool|null
      */
-    public function isResizeKeyboard(): bool
+    public function getResizeKeyboard(): ?bool
     {
         return $this->resizeKeyboard;
     }
 
     /**
-     * @param bool $resizeKeyboard
+     * @param bool|null $resizeKeyboard
      *
      * @return ReplyKeyboardMarkup
      */
-    public function setResizeKeyboard(bool $resizeKeyboard): ReplyKeyboardMarkup
+    public function setResizeKeyboard(?bool $resizeKeyboard): ReplyKeyboardMarkup
     {
         $this->resizeKeyboard = $resizeKeyboard;
 
@@ -70,19 +72,19 @@ class ReplyKeyboardMarkup
     }
 
     /**
-     * @return bool
+     * @return bool|null
      */
-    public function isOneTimeKeyboard(): bool
+    public function getOneTimeKeyboard(): ?bool
     {
         return $this->oneTimeKeyboard;
     }
 
     /**
-     * @param bool $oneTimeKeyboard
+     * @param bool|null $oneTimeKeyboard
      *
      * @return ReplyKeyboardMarkup
      */
-    public function setOneTimeKeyboard(bool $oneTimeKeyboard): ReplyKeyboardMarkup
+    public function setOneTimeKeyboard(?bool $oneTimeKeyboard): ReplyKeyboardMarkup
     {
         $this->oneTimeKeyboard = $oneTimeKeyboard;
 
@@ -90,19 +92,19 @@ class ReplyKeyboardMarkup
     }
 
     /**
-     * @return bool
+     * @return bool|null
      */
-    public function isSelective(): bool
+    public function getSelective(): ?bool
     {
         return $this->selective;
     }
 
     /**
-     * @param bool $selective
+     * @param bool|null $selective
      *
      * @return ReplyKeyboardMarkup
      */
-    public function setSelective(bool $selective): ReplyKeyboardMarkup
+    public function setSelective(?bool $selective): ReplyKeyboardMarkup
     {
         $this->selective = $selective;
 

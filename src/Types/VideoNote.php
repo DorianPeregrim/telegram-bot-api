@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace TelegramBotApi\Types;
 
@@ -15,6 +17,11 @@ class VideoNote
     private string $fileId;
 
     /**
+     * @var string
+     */
+    private string $fileUniqueId;
+
+    /**
      * @var int
      */
     private int $length;
@@ -25,14 +32,14 @@ class VideoNote
     private int $duration;
 
     /**
-     * @var PhotoSize
+     * @var PhotoSize|null
      */
-    private PhotoSize $thumb;
+    private ?PhotoSize $thumb = null;
 
     /**
-     * @var int
+     * @var int|null
      */
-    private int $fileSize;
+    private ?int $fileSize = null;
 
     /**
      * @return string
@@ -50,6 +57,26 @@ class VideoNote
     public function setFileId(string $fileId): VideoNote
     {
         $this->fileId = $fileId;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFileUniqueId(): string
+    {
+        return $this->fileUniqueId;
+    }
+
+    /**
+     * @param string $fileUniqueId
+     *
+     * @return VideoNote
+     */
+    public function setFileUniqueId(string $fileUniqueId): VideoNote
+    {
+        $this->fileUniqueId = $fileUniqueId;
 
         return $this;
     }
@@ -95,19 +122,19 @@ class VideoNote
     }
 
     /**
-     * @return PhotoSize
+     * @return PhotoSize|null
      */
-    public function getThumb(): PhotoSize
+    public function getThumb(): ?PhotoSize
     {
         return $this->thumb;
     }
 
     /**
-     * @param PhotoSize $thumb
+     * @param PhotoSize|null $thumb
      *
      * @return VideoNote
      */
-    public function setThumb(PhotoSize $thumb): VideoNote
+    public function setThumb(?PhotoSize $thumb): VideoNote
     {
         $this->thumb = $thumb;
 
@@ -115,19 +142,19 @@ class VideoNote
     }
 
     /**
-     * @return int
+     * @return int|null
      */
-    public function getFileSize(): int
+    public function getFileSize(): ?int
     {
         return $this->fileSize;
     }
 
     /**
-     * @param int $fileSize
+     * @param int|null $fileSize
      *
      * @return VideoNote
      */
-    public function setFileSize(int $fileSize): VideoNote
+    public function setFileSize(?int $fileSize): VideoNote
     {
         $this->fileSize = $fileSize;
 

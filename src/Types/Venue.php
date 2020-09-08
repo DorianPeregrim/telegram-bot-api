@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace TelegramBotApi\Types;
 
@@ -25,14 +27,14 @@ class Venue
     private string $address;
 
     /**
-     * @var string
+     * @var string|null
      */
-    private string $foursquareId;
+    private ?string $foursquareId = null;
 
     /**
-     * @var string
+     * @var string|null
      */
-    private string $foursquareType;
+    private ?string $foursquareType = null;
 
     /**
      * @return Location
@@ -95,19 +97,19 @@ class Venue
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getFoursquareId(): string
+    public function getFoursquareId(): ?string
     {
         return $this->foursquareId;
     }
 
     /**
-     * @param string $foursquareId
+     * @param string|null $foursquareId
      *
      * @return Venue
      */
-    public function setFoursquareId(string $foursquareId): Venue
+    public function setFoursquareId(?string $foursquareId): Venue
     {
         $this->foursquareId = $foursquareId;
 
@@ -115,19 +117,19 @@ class Venue
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getFoursquareType(): string
+    public function getFoursquareType(): ?string
     {
         return $this->foursquareType;
     }
 
     /**
-     * @param string $foursquareType
+     * @param string|null $foursquareType
      *
      * @return Venue
      */
-    public function setFoursquareType(string $foursquareType): Venue
+    public function setFoursquareType(?string $foursquareType): Venue
     {
         $this->foursquareType = $foursquareType;
 

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace TelegramBotApi\Types;
 
@@ -15,24 +17,29 @@ class Document
     private string $fileId;
 
     /**
-     * @var PhotoSize
-     */
-    private PhotoSize $thumb;
-
-    /**
      * @var string
      */
-    private string $fileName;
+    private string $fileUniqueId;
 
     /**
-     * @var string
+     * @var PhotoSize|null
      */
-    private string $mimeType;
+    private ?PhotoSize $thumb = null;
 
     /**
-     * @var int
+     * @var string|null
      */
-    private int $fileSize;
+    private ?string $fileName = null;
+
+    /**
+     * @var string|null
+     */
+    private ?string $mimeType = null;
+
+    /**
+     * @var int|null
+     */
+    private ?int $fileSize = null;
 
     /**
      * @return string
@@ -55,19 +62,39 @@ class Document
     }
 
     /**
-     * @return PhotoSize
+     * @return string
      */
-    public function getThumb(): PhotoSize
+    public function getFileUniqueId(): string
+    {
+        return $this->fileUniqueId;
+    }
+
+    /**
+     * @param string $fileUniqueId
+     *
+     * @return Document
+     */
+    public function setFileUniqueId(string $fileUniqueId): Document
+    {
+        $this->fileUniqueId = $fileUniqueId;
+
+        return $this;
+    }
+
+    /**
+     * @return PhotoSize|null
+     */
+    public function getThumb(): ?PhotoSize
     {
         return $this->thumb;
     }
 
     /**
-     * @param PhotoSize $thumb
+     * @param PhotoSize|null $thumb
      *
      * @return Document
      */
-    public function setThumb(PhotoSize $thumb): Document
+    public function setThumb(?PhotoSize $thumb): Document
     {
         $this->thumb = $thumb;
 
@@ -75,19 +102,19 @@ class Document
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getFileName(): string
+    public function getFileName(): ?string
     {
         return $this->fileName;
     }
 
     /**
-     * @param string $fileName
+     * @param string|null $fileName
      *
      * @return Document
      */
-    public function setFileName(string $fileName): Document
+    public function setFileName(?string $fileName): Document
     {
         $this->fileName = $fileName;
 
@@ -95,19 +122,19 @@ class Document
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getMimeType(): string
+    public function getMimeType(): ?string
     {
         return $this->mimeType;
     }
 
     /**
-     * @param string $mimeType
+     * @param string|null $mimeType
      *
      * @return Document
      */
-    public function setMimeType(string $mimeType): Document
+    public function setMimeType(?string $mimeType): Document
     {
         $this->mimeType = $mimeType;
 
@@ -115,19 +142,19 @@ class Document
     }
 
     /**
-     * @return int
+     * @return int|null
      */
-    public function getFileSize(): int
+    public function getFileSize(): ?int
     {
         return $this->fileSize;
     }
 
     /**
-     * @param int $fileSize
+     * @param int|null $fileSize
      *
      * @return Document
      */
-    public function setFileSize(int $fileSize): Document
+    public function setFileSize(?int $fileSize): Document
     {
         $this->fileSize = $fileSize;
 

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace TelegramBotApi\Types;
 
@@ -15,9 +17,9 @@ class ForceReply
     private bool $forceReply;
 
     /**
-     * @var bool
+     * @var bool|null
      */
-    private bool $selective;
+    private ?bool $selective = null;
 
     /**
      * @return bool
@@ -40,19 +42,19 @@ class ForceReply
     }
 
     /**
-     * @return bool
+     * @return bool|null
      */
-    public function isSelective(): bool
+    public function getSelective(): ?bool
     {
         return $this->selective;
     }
 
     /**
-     * @param bool $selective
+     * @param bool|null $selective
      *
      * @return ForceReply
      */
-    public function setSelective(bool $selective): ForceReply
+    public function setSelective(?bool $selective): ForceReply
     {
         $this->selective = $selective;
 

@@ -1,6 +1,10 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace TelegramBotApi\Types;
+
+use Carbon\Carbon;
 
 /**
  * Class Message
@@ -15,14 +19,14 @@ class Message
     private int $messageId;
 
     /**
-     * @var User
+     * @var User|null
      */
-    private User $from;
+    private ?User $from = null;
 
     /**
-     * @var int
+     * @var Carbon
      */
-    private int $date;
+    private Carbon $date;
 
     /**
      * @var Chat
@@ -30,219 +34,229 @@ class Message
     private Chat $chat;
 
     /**
-     * @var User
+     * @var User|null
      */
-    private User $forwardFrom;
+    private ?User $forwardFrom = null;
 
     /**
-     * @var Chat
+     * @var Chat|null
      */
-    private Chat $forwardFromChat;
+    private ?Chat $forwardFromChat = null;
 
     /**
-     * @var int
+     * @var int|null
      */
-    private int $forwardFromMessageId;
+    private ?int $forwardFromMessageId = null;
 
     /**
-     * @var string
+     * @var string|null
      */
-    private string $forwardSignature;
+    private ?string $forwardSignature = null;
 
     /**
-     * @var string
+     * @var string|null
      */
-    private string $forwardSenderName;
+    private ?string $forwardSenderName = null;
 
     /**
-     * @var int
+     * @var Carbon|null
      */
-    private int $forwardDate;
+    private ?Carbon $forwardDate = null;
 
     /**
-     * @var Message
+     * @var Message|null
      */
-    private Message $replyToMessage;
+    private ?Message $replyToMessage = null;
 
     /**
-     * @var int
+     * @var User|null
      */
-    private int $editDate;
+    private ?User $viaBot = null;
 
     /**
-     * @var string
+     * @var Carbon|null
      */
-    private string $mediaGroupId;
+    private ?Carbon $editDate = null;
 
     /**
-     * @var string
+     * @var string|null
      */
-    private string $authorSignature;
+    private ?string $mediaGroupId = null;
 
     /**
-     * @var string
+     * @var string|null
      */
-    private string $text;
+    private ?string $authorSignature = null;
 
     /**
-     * @var MessageEntity[]
+     * @var string|null
      */
-    private array $entities;
+    private ?string $text = null;
 
     /**
-     * @var MessageEntity[]
+     * @var MessageEntity[]|null
      */
-    private array $captionEntities;
+    private ?array $entities = null;
 
     /**
-     * @var Audio
+     * @var MessageEntity[]|null
      */
-    private Audio $audio;
+    private ?array $captionEntities = null;
 
     /**
-     * @var Document
+     * @var Audio|null
      */
-    private Document $document;
+    private ?Audio $audio = null;
 
     /**
-     * @var Animation
+     * @var Document|null
      */
-    private Animation $animation;
+    private ?Document $document = null;
 
     /**
-     * @var Game
+     * @var Animation|null
      */
-    private Game $game;
+    private ?Animation $animation = null;
 
     /**
-     * @var PhotoSize[]
+     * @var Dice|null
      */
-    private array $photo;
+    private ?Dice $dice = null;
 
     /**
-     * @var Sticker
+     * @var Game|null
      */
-    private Sticker $sticker;
+    private ?Game $game = null;
 
     /**
-     * @var Video
+     * @var PhotoSize[]|null
      */
-    private Video $video;
+    private ?array $photo = null;
 
     /**
-     * @var Voice
+     * @var Sticker|null
      */
-    private Voice $voice;
+    private ?Sticker $sticker = null;
 
     /**
-     * @var VideoNote
+     * @var Video|null
      */
-    private VideoNote $videoNote;
+    private ?Video $video = null;
 
     /**
-     * @var string
+     * @var Voice|null
      */
-    private string $caption;
+    private ?Voice $voice = null;
 
     /**
-     * @var Contact
+     * @var VideoNote|null
      */
-    private Contact $contact;
+    private ?VideoNote $videoNote = null;
 
     /**
-     * @var Location
+     * @var string|null
      */
-    private Location $location;
+    private ?string $caption = null;
 
     /**
-     * @var Venue
+     * @var Contact|null
      */
-    private Venue $venue;
+    private ?Contact $contact = null;
 
     /**
-     * @var Poll
+     * @var Location|null
      */
-    private Poll $poll;
+    private ?Location $location = null;
 
     /**
-     * @var User[]
+     * @var Venue|null
      */
-    private array $newChatMembers;
+    private ?Venue $venue = null;
 
     /**
-     * @var User
+     * @var Poll|null
      */
-    private User $leftChatMember;
+    private ?Poll $poll = null;
 
     /**
-     * @var string
+     * @var User[]|null
      */
-    private string $newChatTitle;
+    private ?array $newChatMembers = null;
 
     /**
-     * @var PhotoSize[]
+     * @var User|null
      */
-    private array $newChatPhoto;
+    private ?User $leftChatMember = null;
 
     /**
-     * @var bool
+     * @var string|null
      */
-    private bool $deleteChatPhoto;
+    private ?string $newChatTitle = null;
 
     /**
-     * @var bool
+     * @var PhotoSize[]|null
      */
-    private bool $groupChatCreated;
+    private ?array $newChatPhoto = null;
 
     /**
-     * @var bool
+     * @var bool|null
      */
-    private bool $supergroupChatCreated;
+    private ?bool $deleteChatPhoto = null;
 
     /**
-     * @var bool
+     * @var bool|null
      */
-    private bool $channelChatCreated;
+    private ?bool $groupChatCreated = null;
 
     /**
-     * @var int
+     * @var bool|null
      */
-    private int $migrateToChatId;
+    private ?bool $supergroupChatCreated = null;
 
     /**
-     * @var int
+     * @var bool|null
      */
-    private int $migrateFromChatId;
+    private ?bool $channelChatCreated = null;
 
     /**
-     * @var Message
+     * @var int|null
      */
-    private Message $pinnedMessage;
+    private ?int $migrateToChatId = null;
 
     /**
-     * @var Invoice
+     * @var int|null
      */
-    private Invoice $invoice;
+    private ?int $migrateFromChatId = null;
 
     /**
-     * @var SuccessfulPayment
+     * @var Message|null
      */
-    private SuccessfulPayment $successfulPayment;
+    private ?Message $pinnedMessage = null;
 
     /**
-     * @var string
+     * @var Invoice|null
      */
-    private string $connectedWebsite;
+    private ?Invoice $invoice = null;
 
     /**
-     * @var PassportData
+     * @var SuccessfulPayment|null
      */
-    private PassportData $passportData;
+    private ?SuccessfulPayment $successfulPayment = null;
 
     /**
-     * @var InlineKeyboardMarkup
+     * @var string|null
      */
-    private InlineKeyboardMarkup $replyMarkup;
+    private ?string $connectedWebsite = null;
+
+    /**
+     * @var PassportData|null
+     */
+    private ?PassportData $passportData = null;
+
+    /**
+     * @var InlineKeyboardMarkup|null
+     */
+    private ?InlineKeyboardMarkup $replyMarkup = null;
 
     /**
      * @return int
@@ -265,19 +279,19 @@ class Message
     }
 
     /**
-     * @return User
+     * @return User|null
      */
-    public function getFrom(): User
+    public function getFrom(): ?User
     {
         return $this->from;
     }
 
     /**
-     * @param User $from
+     * @param User|null $from
      *
      * @return Message
      */
-    public function setFrom(User $from): Message
+    public function setFrom(?User $from): Message
     {
         $this->from = $from;
 
@@ -285,19 +299,19 @@ class Message
     }
 
     /**
-     * @return int
+     * @return Carbon
      */
-    public function getDate(): int
+    public function getDate(): Carbon
     {
         return $this->date;
     }
 
     /**
-     * @param int $date
+     * @param Carbon $date
      *
      * @return Message
      */
-    public function setDate(int $date): Message
+    public function setDate(Carbon $date): Message
     {
         $this->date = $date;
 
@@ -325,19 +339,19 @@ class Message
     }
 
     /**
-     * @return User
+     * @return User|null
      */
-    public function getForwardFrom(): User
+    public function getForwardFrom(): ?User
     {
         return $this->forwardFrom;
     }
 
     /**
-     * @param User $forwardFrom
+     * @param User|null $forwardFrom
      *
      * @return Message
      */
-    public function setForwardFrom(User $forwardFrom): Message
+    public function setForwardFrom(?User $forwardFrom): Message
     {
         $this->forwardFrom = $forwardFrom;
 
@@ -345,19 +359,19 @@ class Message
     }
 
     /**
-     * @return Chat
+     * @return Chat|null
      */
-    public function getForwardFromChat(): Chat
+    public function getForwardFromChat(): ?Chat
     {
         return $this->forwardFromChat;
     }
 
     /**
-     * @param Chat $forwardFromChat
+     * @param Chat|null $forwardFromChat
      *
      * @return Message
      */
-    public function setForwardFromChat(Chat $forwardFromChat): Message
+    public function setForwardFromChat(?Chat $forwardFromChat): Message
     {
         $this->forwardFromChat = $forwardFromChat;
 
@@ -365,19 +379,19 @@ class Message
     }
 
     /**
-     * @return int
+     * @return int|null
      */
-    public function getForwardFromMessageId(): int
+    public function getForwardFromMessageId(): ?int
     {
         return $this->forwardFromMessageId;
     }
 
     /**
-     * @param int $forwardFromMessageId
+     * @param int|null $forwardFromMessageId
      *
      * @return Message
      */
-    public function setForwardFromMessageId(int $forwardFromMessageId): Message
+    public function setForwardFromMessageId(?int $forwardFromMessageId): Message
     {
         $this->forwardFromMessageId = $forwardFromMessageId;
 
@@ -385,19 +399,19 @@ class Message
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getForwardSignature(): string
+    public function getForwardSignature(): ?string
     {
         return $this->forwardSignature;
     }
 
     /**
-     * @param string $forwardSignature
+     * @param string|null $forwardSignature
      *
      * @return Message
      */
-    public function setForwardSignature(string $forwardSignature): Message
+    public function setForwardSignature(?string $forwardSignature): Message
     {
         $this->forwardSignature = $forwardSignature;
 
@@ -405,19 +419,19 @@ class Message
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getForwardSenderName(): string
+    public function getForwardSenderName(): ?string
     {
         return $this->forwardSenderName;
     }
 
     /**
-     * @param string $forwardSenderName
+     * @param string|null $forwardSenderName
      *
      * @return Message
      */
-    public function setForwardSenderName(string $forwardSenderName): Message
+    public function setForwardSenderName(?string $forwardSenderName): Message
     {
         $this->forwardSenderName = $forwardSenderName;
 
@@ -425,19 +439,19 @@ class Message
     }
 
     /**
-     * @return int
+     * @return Carbon|null
      */
-    public function getForwardDate(): int
+    public function getForwardDate(): ?int
     {
         return $this->forwardDate;
     }
 
     /**
-     * @param int $forwardDate
+     * @param Carbon|null $forwardDate
      *
      * @return Message
      */
-    public function setForwardDate(int $forwardDate): Message
+    public function setForwardDate(?Carbon $forwardDate): Message
     {
         $this->forwardDate = $forwardDate;
 
@@ -445,19 +459,19 @@ class Message
     }
 
     /**
-     * @return Message
+     * @return Message|null
      */
-    public function getReplyToMessage(): Message
+    public function getReplyToMessage(): ?Message
     {
         return $this->replyToMessage;
     }
 
     /**
-     * @param Message $replyToMessage
+     * @param Message|null $replyToMessage
      *
      * @return Message
      */
-    public function setReplyToMessage(Message $replyToMessage): Message
+    public function setReplyToMessage(?Message $replyToMessage): Message
     {
         $this->replyToMessage = $replyToMessage;
 
@@ -465,19 +479,41 @@ class Message
     }
 
     /**
-     * @return int
+     * @return User|null
      */
-    public function getEditDate(): int
+    public function getViaBot(): ?User
+    {
+        return $this->viaBot;
+    }
+
+    /**
+     * @param User|null $viaBot
+     *
+     * @return Message
+     */
+    public function setViaBot(?User $viaBot): Message
+    {
+        $this->viaBot = $viaBot;
+
+        return $this;
+    }
+
+
+
+    /**
+     * @return Carbon|null
+     */
+    public function getEditDate(): ?Carbon
     {
         return $this->editDate;
     }
 
     /**
-     * @param int $editDate
+     * @param Carbon|null $editDate
      *
      * @return Message
      */
-    public function setEditDate(int $editDate): Message
+    public function setEditDate(?Carbon $editDate): Message
     {
         $this->editDate = $editDate;
 
@@ -485,19 +521,19 @@ class Message
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getMediaGroupId(): string
+    public function getMediaGroupId(): ?string
     {
         return $this->mediaGroupId;
     }
 
     /**
-     * @param string $mediaGroupId
+     * @param string|null $mediaGroupId
      *
      * @return Message
      */
-    public function setMediaGroupId(string $mediaGroupId): Message
+    public function setMediaGroupId(?string $mediaGroupId): Message
     {
         $this->mediaGroupId = $mediaGroupId;
 
@@ -505,19 +541,19 @@ class Message
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getAuthorSignature(): string
+    public function getAuthorSignature(): ?string
     {
         return $this->authorSignature;
     }
 
     /**
-     * @param string $authorSignature
+     * @param string|null $authorSignature
      *
      * @return Message
      */
-    public function setAuthorSignature(string $authorSignature): Message
+    public function setAuthorSignature(?string $authorSignature): Message
     {
         $this->authorSignature = $authorSignature;
 
@@ -525,19 +561,19 @@ class Message
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getText(): string
+    public function getText(): ?string
     {
         return $this->text;
     }
 
     /**
-     * @param string $text
+     * @param string|null $text
      *
      * @return Message
      */
-    public function setText(string $text): Message
+    public function setText(?string $text): Message
     {
         $this->text = $text;
 
@@ -545,19 +581,19 @@ class Message
     }
 
     /**
-     * @return MessageEntity[]
+     * @return MessageEntity[]|null
      */
-    public function getEntities(): array
+    public function getEntities(): ?array
     {
         return $this->entities;
     }
 
     /**
-     * @param MessageEntity[] $entities
+     * @param MessageEntity[]|null $entities
      *
      * @return Message
      */
-    public function setEntities(array $entities): Message
+    public function setEntities(?array $entities): Message
     {
         $this->entities = $entities;
 
@@ -565,19 +601,19 @@ class Message
     }
 
     /**
-     * @return MessageEntity[]
+     * @return MessageEntity[]|null
      */
-    public function getCaptionEntities(): array
+    public function getCaptionEntities(): ?array
     {
         return $this->captionEntities;
     }
 
     /**
-     * @param MessageEntity[] $captionEntities
+     * @param MessageEntity[]|null $captionEntities
      *
      * @return Message
      */
-    public function setCaptionEntities(array $captionEntities): Message
+    public function setCaptionEntities(?array $captionEntities): Message
     {
         $this->captionEntities = $captionEntities;
 
@@ -585,19 +621,19 @@ class Message
     }
 
     /**
-     * @return Audio
+     * @return Audio|null
      */
-    public function getAudio(): Audio
+    public function getAudio(): ?Audio
     {
         return $this->audio;
     }
 
     /**
-     * @param Audio $audio
+     * @param Audio|null $audio
      *
      * @return Message
      */
-    public function setAudio(Audio $audio): Message
+    public function setAudio(?Audio $audio): Message
     {
         $this->audio = $audio;
 
@@ -605,19 +641,19 @@ class Message
     }
 
     /**
-     * @return Document
+     * @return Document|null
      */
-    public function getDocument(): Document
+    public function getDocument(): ?Document
     {
         return $this->document;
     }
 
     /**
-     * @param Document $document
+     * @param Document|null $document
      *
      * @return Message
      */
-    public function setDocument(Document $document): Message
+    public function setDocument(?Document $document): Message
     {
         $this->document = $document;
 
@@ -625,19 +661,19 @@ class Message
     }
 
     /**
-     * @return Animation
+     * @return Animation|null
      */
-    public function getAnimation(): Animation
+    public function getAnimation(): ?Animation
     {
         return $this->animation;
     }
 
     /**
-     * @param Animation $animation
+     * @param Animation|null $animation
      *
      * @return Message
      */
-    public function setAnimation(Animation $animation): Message
+    public function setAnimation(?Animation $animation): Message
     {
         $this->animation = $animation;
 
@@ -645,19 +681,19 @@ class Message
     }
 
     /**
-     * @return Game
+     * @return Game|null
      */
-    public function getGame(): Game
+    public function getGame(): ?Game
     {
         return $this->game;
     }
 
     /**
-     * @param Game $game
+     * @param Game|null $game
      *
      * @return Message
      */
-    public function setGame(Game $game): Message
+    public function setGame(?Game $game): Message
     {
         $this->game = $game;
 
@@ -665,19 +701,39 @@ class Message
     }
 
     /**
-     * @return PhotoSize[]
+     * @return Dice|null
      */
-    public function getPhoto(): array
+    public function getDice(): ?Dice
+    {
+        return $this->dice;
+    }
+
+    /**
+     * @param Dice|null $dice
+     *
+     * @return Message
+     */
+    public function setDice(?Dice $dice): Message
+    {
+        $this->dice = $dice;
+
+        return $this;
+    }
+
+    /**
+     * @return array|null
+     */
+    public function getPhoto(): ?array
     {
         return $this->photo;
     }
 
     /**
-     * @param PhotoSize[] $photo
+     * @param array|null $photo
      *
      * @return Message
      */
-    public function setPhoto(array $photo): Message
+    public function setPhoto(?array $photo): Message
     {
         $this->photo = $photo;
 
@@ -685,19 +741,19 @@ class Message
     }
 
     /**
-     * @return Sticker
+     * @return Sticker|null
      */
-    public function getSticker(): Sticker
+    public function getSticker(): ?Sticker
     {
         return $this->sticker;
     }
 
     /**
-     * @param Sticker $sticker
+     * @param Sticker|null $sticker
      *
      * @return Message
      */
-    public function setSticker(Sticker $sticker): Message
+    public function setSticker(?Sticker $sticker): Message
     {
         $this->sticker = $sticker;
 
@@ -705,19 +761,19 @@ class Message
     }
 
     /**
-     * @return Video
+     * @return Video|null
      */
-    public function getVideo(): Video
+    public function getVideo(): ?Video
     {
         return $this->video;
     }
 
     /**
-     * @param Video $video
+     * @param Video|null $video
      *
      * @return Message
      */
-    public function setVideo(Video $video): Message
+    public function setVideo(?Video $video): Message
     {
         $this->video = $video;
 
@@ -725,19 +781,19 @@ class Message
     }
 
     /**
-     * @return Voice
+     * @return Voice|null
      */
-    public function getVoice(): Voice
+    public function getVoice(): ?Voice
     {
         return $this->voice;
     }
 
     /**
-     * @param Voice $voice
+     * @param Voice|null $voice
      *
      * @return Message
      */
-    public function setVoice(Voice $voice): Message
+    public function setVoice(?Voice $voice): Message
     {
         $this->voice = $voice;
 
@@ -745,19 +801,19 @@ class Message
     }
 
     /**
-     * @return VideoNote
+     * @return VideoNote|null
      */
-    public function getVideoNote(): VideoNote
+    public function getVideoNote(): ?VideoNote
     {
         return $this->videoNote;
     }
 
     /**
-     * @param VideoNote $videoNote
+     * @param VideoNote|null $videoNote
      *
      * @return Message
      */
-    public function setVideoNote(VideoNote $videoNote): Message
+    public function setVideoNote(?VideoNote $videoNote): Message
     {
         $this->videoNote = $videoNote;
 
@@ -765,19 +821,19 @@ class Message
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getCaption(): string
+    public function getCaption(): ?string
     {
         return $this->caption;
     }
 
     /**
-     * @param string $caption
+     * @param string|null $caption
      *
      * @return Message
      */
-    public function setCaption(string $caption): Message
+    public function setCaption(?string $caption): Message
     {
         $this->caption = $caption;
 
@@ -785,19 +841,19 @@ class Message
     }
 
     /**
-     * @return Contact
+     * @return Contact|null
      */
-    public function getContact(): Contact
+    public function getContact(): ?Contact
     {
         return $this->contact;
     }
 
     /**
-     * @param Contact $contact
+     * @param Contact|null $contact
      *
      * @return Message
      */
-    public function setContact(Contact $contact): Message
+    public function setContact(?Contact $contact): Message
     {
         $this->contact = $contact;
 
@@ -805,19 +861,19 @@ class Message
     }
 
     /**
-     * @return Location
+     * @return Location|null
      */
-    public function getLocation(): Location
+    public function getLocation(): ?Location
     {
         return $this->location;
     }
 
     /**
-     * @param Location $location
+     * @param Location|null $location
      *
      * @return Message
      */
-    public function setLocation(Location $location): Message
+    public function setLocation(?Location $location): Message
     {
         $this->location = $location;
 
@@ -825,19 +881,19 @@ class Message
     }
 
     /**
-     * @return Venue
+     * @return Venue|null
      */
-    public function getVenue(): Venue
+    public function getVenue(): ?Venue
     {
         return $this->venue;
     }
 
     /**
-     * @param Venue $venue
+     * @param Venue|null $venue
      *
      * @return Message
      */
-    public function setVenue(Venue $venue): Message
+    public function setVenue(?Venue $venue): Message
     {
         $this->venue = $venue;
 
@@ -845,19 +901,19 @@ class Message
     }
 
     /**
-     * @return Poll
+     * @return Poll|null
      */
-    public function getPoll(): Poll
+    public function getPoll(): ?Poll
     {
         return $this->poll;
     }
 
     /**
-     * @param Poll $poll
+     * @param Poll|null $poll
      *
      * @return Message
      */
-    public function setPoll(Poll $poll): Message
+    public function setPoll(?Poll $poll): Message
     {
         $this->poll = $poll;
 
@@ -865,19 +921,19 @@ class Message
     }
 
     /**
-     * @return User[]
+     * @return User[]|null
      */
-    public function getNewChatMembers(): array
+    public function getNewChatMembers(): ?array
     {
         return $this->newChatMembers;
     }
 
     /**
-     * @param User[] $newChatMembers
+     * @param User[]|null $newChatMembers
      *
      * @return Message
      */
-    public function setNewChatMembers(array $newChatMembers): Message
+    public function setNewChatMembers(?array $newChatMembers): Message
     {
         $this->newChatMembers = $newChatMembers;
 
@@ -885,19 +941,19 @@ class Message
     }
 
     /**
-     * @return User
+     * @return User|null
      */
-    public function getLeftChatMember(): User
+    public function getLeftChatMember(): ?User
     {
         return $this->leftChatMember;
     }
 
     /**
-     * @param User $leftChatMember
+     * @param User|null $leftChatMember
      *
      * @return Message
      */
-    public function setLeftChatMember(User $leftChatMember): Message
+    public function setLeftChatMember(?User $leftChatMember): Message
     {
         $this->leftChatMember = $leftChatMember;
 
@@ -905,19 +961,19 @@ class Message
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getNewChatTitle(): string
+    public function getNewChatTitle(): ?string
     {
         return $this->newChatTitle;
     }
 
     /**
-     * @param string $newChatTitle
+     * @param string|null $newChatTitle
      *
      * @return Message
      */
-    public function setNewChatTitle(string $newChatTitle): Message
+    public function setNewChatTitle(?string $newChatTitle): Message
     {
         $this->newChatTitle = $newChatTitle;
 
@@ -925,19 +981,19 @@ class Message
     }
 
     /**
-     * @return PhotoSize[]
+     * @return PhotoSize[]|null
      */
-    public function getNewChatPhoto(): array
+    public function getNewChatPhoto(): ?array
     {
         return $this->newChatPhoto;
     }
 
     /**
-     * @param PhotoSize[] $newChatPhoto
+     * @param PhotoSize[]|null $newChatPhoto
      *
      * @return Message
      */
-    public function setNewChatPhoto(array $newChatPhoto): Message
+    public function setNewChatPhoto(?array $newChatPhoto): Message
     {
         $this->newChatPhoto = $newChatPhoto;
 
@@ -945,19 +1001,19 @@ class Message
     }
 
     /**
-     * @return bool
+     * @return bool|null
      */
-    public function isDeleteChatPhoto(): bool
+    public function getDeleteChatPhoto(): ?bool
     {
         return $this->deleteChatPhoto;
     }
 
     /**
-     * @param bool $deleteChatPhoto
+     * @param bool|null $deleteChatPhoto
      *
      * @return Message
      */
-    public function setDeleteChatPhoto(bool $deleteChatPhoto): Message
+    public function setDeleteChatPhoto(?bool $deleteChatPhoto): Message
     {
         $this->deleteChatPhoto = $deleteChatPhoto;
 
@@ -965,19 +1021,19 @@ class Message
     }
 
     /**
-     * @return bool
+     * @return bool|null
      */
-    public function isGroupChatCreated(): bool
+    public function getGroupChatCreated(): ?bool
     {
         return $this->groupChatCreated;
     }
 
     /**
-     * @param bool $groupChatCreated
+     * @param bool|null $groupChatCreated
      *
      * @return Message
      */
-    public function setGroupChatCreated(bool $groupChatCreated): Message
+    public function setGroupChatCreated(?bool $groupChatCreated): Message
     {
         $this->groupChatCreated = $groupChatCreated;
 
@@ -985,19 +1041,19 @@ class Message
     }
 
     /**
-     * @return bool
+     * @return bool|null
      */
-    public function isSupergroupChatCreated(): bool
+    public function getSupergroupChatCreated(): ?bool
     {
         return $this->supergroupChatCreated;
     }
 
     /**
-     * @param bool $supergroupChatCreated
+     * @param bool|null $supergroupChatCreated
      *
      * @return Message
      */
-    public function setSupergroupChatCreated(bool $supergroupChatCreated): Message
+    public function setSupergroupChatCreated(?bool $supergroupChatCreated): Message
     {
         $this->supergroupChatCreated = $supergroupChatCreated;
 
@@ -1005,19 +1061,19 @@ class Message
     }
 
     /**
-     * @return bool
+     * @return bool|null
      */
-    public function isChannelChatCreated(): bool
+    public function getChannelChatCreated(): ?bool
     {
         return $this->channelChatCreated;
     }
 
     /**
-     * @param bool $channelChatCreated
+     * @param bool|null $channelChatCreated
      *
      * @return Message
      */
-    public function setChannelChatCreated(bool $channelChatCreated): Message
+    public function setChannelChatCreated(?bool $channelChatCreated): Message
     {
         $this->channelChatCreated = $channelChatCreated;
 
@@ -1025,19 +1081,19 @@ class Message
     }
 
     /**
-     * @return int
+     * @return int|null
      */
-    public function getMigrateToChatId(): int
+    public function getMigrateToChatId(): ?int
     {
         return $this->migrateToChatId;
     }
 
     /**
-     * @param int $migrateToChatId
+     * @param int|null $migrateToChatId
      *
      * @return Message
      */
-    public function setMigrateToChatId(int $migrateToChatId): Message
+    public function setMigrateToChatId(?int $migrateToChatId): Message
     {
         $this->migrateToChatId = $migrateToChatId;
 
@@ -1045,19 +1101,19 @@ class Message
     }
 
     /**
-     * @return int
+     * @return int|null
      */
-    public function getMigrateFromChatId(): int
+    public function getMigrateFromChatId(): ?int
     {
         return $this->migrateFromChatId;
     }
 
     /**
-     * @param int $migrateFromChatId
+     * @param int|null $migrateFromChatId
      *
      * @return Message
      */
-    public function setMigrateFromChatId(int $migrateFromChatId): Message
+    public function setMigrateFromChatId(?int $migrateFromChatId): Message
     {
         $this->migrateFromChatId = $migrateFromChatId;
 
@@ -1065,19 +1121,19 @@ class Message
     }
 
     /**
-     * @return Message
+     * @return Message|null
      */
-    public function getPinnedMessage(): Message
+    public function getPinnedMessage(): ?Message
     {
         return $this->pinnedMessage;
     }
 
     /**
-     * @param Message $pinnedMessage
+     * @param Message|null $pinnedMessage
      *
      * @return Message
      */
-    public function setPinnedMessage(Message $pinnedMessage): Message
+    public function setPinnedMessage(?Message $pinnedMessage): Message
     {
         $this->pinnedMessage = $pinnedMessage;
 
@@ -1085,19 +1141,19 @@ class Message
     }
 
     /**
-     * @return Invoice
+     * @return Invoice|null
      */
-    public function getInvoice(): Invoice
+    public function getInvoice(): ?Invoice
     {
         return $this->invoice;
     }
 
     /**
-     * @param Invoice $invoice
+     * @param Invoice|null $invoice
      *
      * @return Message
      */
-    public function setInvoice(Invoice $invoice): Message
+    public function setInvoice(?Invoice $invoice): Message
     {
         $this->invoice = $invoice;
 
@@ -1105,19 +1161,19 @@ class Message
     }
 
     /**
-     * @return SuccessfulPayment
+     * @return SuccessfulPayment|null
      */
-    public function getSuccessfulPayment(): SuccessfulPayment
+    public function getSuccessfulPayment(): ?SuccessfulPayment
     {
         return $this->successfulPayment;
     }
 
     /**
-     * @param SuccessfulPayment $successfulPayment
+     * @param SuccessfulPayment|null $successfulPayment
      *
      * @return Message
      */
-    public function setSuccessfulPayment(SuccessfulPayment $successfulPayment): Message
+    public function setSuccessfulPayment(?SuccessfulPayment $successfulPayment): Message
     {
         $this->successfulPayment = $successfulPayment;
 
@@ -1125,19 +1181,19 @@ class Message
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getConnectedWebsite(): string
+    public function getConnectedWebsite(): ?string
     {
         return $this->connectedWebsite;
     }
 
     /**
-     * @param string $connectedWebsite
+     * @param string|null $connectedWebsite
      *
      * @return Message
      */
-    public function setConnectedWebsite(string $connectedWebsite): Message
+    public function setConnectedWebsite(?string $connectedWebsite): Message
     {
         $this->connectedWebsite = $connectedWebsite;
 
@@ -1145,19 +1201,19 @@ class Message
     }
 
     /**
-     * @return PassportData
+     * @return PassportData|null
      */
-    public function getPassportData(): PassportData
+    public function getPassportData(): ?PassportData
     {
         return $this->passportData;
     }
 
     /**
-     * @param PassportData $passportData
+     * @param PassportData|null $passportData
      *
      * @return Message
      */
-    public function setPassportData(PassportData $passportData): Message
+    public function setPassportData(?PassportData $passportData): Message
     {
         $this->passportData = $passportData;
 
@@ -1165,19 +1221,19 @@ class Message
     }
 
     /**
-     * @return InlineKeyboardMarkup
+     * @return InlineKeyboardMarkup|null
      */
-    public function getReplyMarkup(): InlineKeyboardMarkup
+    public function getReplyMarkup(): ?InlineKeyboardMarkup
     {
         return $this->replyMarkup;
     }
 
     /**
-     * @param InlineKeyboardMarkup $replyMarkup
+     * @param InlineKeyboardMarkup|null $replyMarkup
      *
      * @return Message
      */
-    public function setReplyMarkup(InlineKeyboardMarkup $replyMarkup): Message
+    public function setReplyMarkup(?InlineKeyboardMarkup $replyMarkup): Message
     {
         $this->replyMarkup = $replyMarkup;
 

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace TelegramBotApi\Types;
 
@@ -20,19 +22,19 @@ class Contact
     private string $firstName;
 
     /**
-     * @var string
+     * @var string|null
      */
-    private string $lastName;
+    private ?string $lastName = null;
 
     /**
-     * @var int
+     * @var int|null
      */
-    private int $userId;
+    private ?int $userId = null;
 
     /**
-     * @var string
+     * @var string|null
      */
-    private string $vcard;
+    private ?string $vcard = null;
 
     /**
      * @return string
@@ -75,19 +77,19 @@ class Contact
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getLastName(): string
+    public function getLastName(): ?string
     {
         return $this->lastName;
     }
 
     /**
-     * @param string $lastName
+     * @param string|null $lastName
      *
      * @return Contact
      */
-    public function setLastName(string $lastName): Contact
+    public function setLastName(?string $lastName): Contact
     {
         $this->lastName = $lastName;
 
@@ -95,19 +97,19 @@ class Contact
     }
 
     /**
-     * @return int
+     * @return int|null
      */
-    public function getUserId(): int
+    public function getUserId(): ?int
     {
         return $this->userId;
     }
 
     /**
-     * @param int $userId
+     * @param int|null $userId
      *
      * @return Contact
      */
-    public function setUserId(int $userId): Contact
+    public function setUserId(?int $userId): Contact
     {
         $this->userId = $userId;
 
@@ -115,19 +117,19 @@ class Contact
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getVcard(): string
+    public function getVcard(): ?string
     {
         return $this->vcard;
     }
 
     /**
-     * @param string $vcard
+     * @param string|null $vcard
      *
      * @return Contact
      */
-    public function setVcard(string $vcard): Contact
+    public function setVcard(?string $vcard): Contact
     {
         $this->vcard = $vcard;
 

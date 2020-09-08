@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace TelegramBotApi\Types;
 
@@ -13,6 +15,11 @@ class Animation
      * @var string
      */
     private string $fileId;
+
+    /**
+     * @var string
+     */
+    private string $fileUniqueId;
 
     /**
      * @var int
@@ -30,24 +37,24 @@ class Animation
     private int $duration;
 
     /**
-     * @var PhotoSize
+     * @var PhotoSize|null
      */
-    private PhotoSize $thumb;
+    private ?PhotoSize $thumb = null;
 
     /**
-     * @var string
+     * @var string|null
      */
-    private string $fileName;
+    private ?string $fileName = null;
 
     /**
-     * @var string
+     * @var string|null
      */
-    private string $mimeType;
+    private ?string $mimeType = null;
 
     /**
-     * @var int
+     * @var int|null
      */
-    private int $fileSize;
+    private ?int $fileSize = null;
 
     /**
      * @return string
@@ -67,6 +74,22 @@ class Animation
         $this->fileId = $fileId;
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFileUniqueId(): string
+    {
+        return $this->fileUniqueId;
+    }
+
+    /**
+     * @param string $fileUniqueId
+     */
+    public function setFileUniqueId(string $fileUniqueId): void
+    {
+        $this->fileUniqueId = $fileUniqueId;
     }
 
     /**
@@ -130,19 +153,19 @@ class Animation
     }
 
     /**
-     * @return PhotoSize
+     * @return PhotoSize|null
      */
-    public function getThumb(): PhotoSize
+    public function getThumb(): ?PhotoSize
     {
         return $this->thumb;
     }
 
     /**
-     * @param PhotoSize $thumb
+     * @param PhotoSize|null $thumb
      *
      * @return Animation
      */
-    public function setThumb(PhotoSize $thumb): Animation
+    public function setThumb(?PhotoSize $thumb): Animation
     {
         $this->thumb = $thumb;
 
@@ -150,19 +173,19 @@ class Animation
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getFileName(): string
+    public function getFileName(): ?string
     {
         return $this->fileName;
     }
 
     /**
-     * @param string $fileName
+     * @param string|null $fileName
      *
      * @return Animation
      */
-    public function setFileName(string $fileName): Animation
+    public function setFileName(?string $fileName): Animation
     {
         $this->fileName = $fileName;
 
@@ -170,19 +193,19 @@ class Animation
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getMimeType(): string
+    public function getMimeType(): ?string
     {
         return $this->mimeType;
     }
 
     /**
-     * @param string $mimeType
+     * @param string|null $mimeType
      *
      * @return Animation
      */
-    public function setMimeType(string $mimeType): Animation
+    public function setMimeType(?string $mimeType): Animation
     {
         $this->mimeType = $mimeType;
 
@@ -190,19 +213,19 @@ class Animation
     }
 
     /**
-     * @return int
+     * @return int|null
      */
-    public function getFileSize(): int
+    public function getFileSize(): ?int
     {
         return $this->fileSize;
     }
 
     /**
-     * @param int $fileSize
+     * @param int|null $fileSize
      *
      * @return Animation
      */
-    public function setFileSize(int $fileSize): Animation
+    public function setFileSize(?int $fileSize): Animation
     {
         $this->fileSize = $fileSize;
 

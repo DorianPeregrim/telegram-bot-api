@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace TelegramBotApi\Types;
 
@@ -17,47 +19,47 @@ class EncryptedPassportElement
     /**
      * @var string
      */
-    private string $data;
+    private ?string $data = null;
 
     /**
-     * @var string
+     * @var string|null
      */
-    private string $phoneNumber;
+    private ?string $phoneNumber = null;
 
     /**
-     * @var string
+     * @var string|null
      */
-    private string $email;
+    private ?string $email = null;
 
     /**
-     * @var PassportFile[]
+     * @var PassportFile[]|null
      */
-    private array $files;
+    private ?array $files = null;
 
     /**
-     * @var PassportFile
+     * @var PassportFile|null
      */
-    private PassportFile $frontSide;
+    private ?PassportFile $frontSide = null;
 
     /**
-     * @var PassportFile
+     * @var PassportFile|null
      */
-    private PassportFile $reverse_side;
+    private ?PassportFile $reverse_side = null;
 
     /**
-     * @var PassportFile
+     * @var PassportFile|null
      */
-    private PassportFile $selfie;
+    private ?PassportFile $selfie = null;
 
     /**
-     * @var PassportFile[]
+     * @var PassportFile[]|null
      */
-    private array $translation;
+    private ?array $translation = null;
 
     /**
-     * @var string
+     * @var string|null
      */
-    private string $hash;
+    private ?string $hash = null;
 
     /**
      * @return string
@@ -100,19 +102,19 @@ class EncryptedPassportElement
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getPhoneNumber(): string
+    public function getPhoneNumber(): ?string
     {
         return $this->phoneNumber;
     }
 
     /**
-     * @param string $phoneNumber
+     * @param string|null $phoneNumber
      *
      * @return EncryptedPassportElement
      */
-    public function setPhoneNumber(string $phoneNumber): EncryptedPassportElement
+    public function setPhoneNumber(?string $phoneNumber): EncryptedPassportElement
     {
         $this->phoneNumber = $phoneNumber;
 
@@ -120,19 +122,19 @@ class EncryptedPassportElement
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getEmail(): string
+    public function getEmail(): ?string
     {
         return $this->email;
     }
 
     /**
-     * @param string $email
+     * @param string|null $email
      *
      * @return EncryptedPassportElement
      */
-    public function setEmail(string $email): EncryptedPassportElement
+    public function setEmail(?string $email): EncryptedPassportElement
     {
         $this->email = $email;
 
@@ -140,19 +142,19 @@ class EncryptedPassportElement
     }
 
     /**
-     * @return PassportFile[]
+     * @return PassportFile[]|null
      */
-    public function getFiles(): array
+    public function getFiles(): ?array
     {
         return $this->files;
     }
 
     /**
-     * @param PassportFile[] $files
+     * @param PassportFile[]|null $files
      *
      * @return EncryptedPassportElement
      */
-    public function setFiles(array $files): EncryptedPassportElement
+    public function setFiles(?array $files): EncryptedPassportElement
     {
         $this->files = $files;
 
@@ -160,19 +162,19 @@ class EncryptedPassportElement
     }
 
     /**
-     * @return PassportFile
+     * @return PassportFile|null
      */
-    public function getFrontSide(): PassportFile
+    public function getFrontSide(): ?PassportFile
     {
         return $this->frontSide;
     }
 
     /**
-     * @param PassportFile $frontSide
+     * @param PassportFile|null $frontSide
      *
      * @return EncryptedPassportElement
      */
-    public function setFrontSide(PassportFile $frontSide): EncryptedPassportElement
+    public function setFrontSide(?PassportFile $frontSide): EncryptedPassportElement
     {
         $this->frontSide = $frontSide;
 
@@ -180,19 +182,19 @@ class EncryptedPassportElement
     }
 
     /**
-     * @return PassportFile
+     * @return PassportFile|null
      */
-    public function getReverseSide(): PassportFile
+    public function getReverseSide(): ?PassportFile
     {
         return $this->reverse_side;
     }
 
     /**
-     * @param PassportFile $reverse_side
+     * @param PassportFile|null $reverse_side
      *
      * @return EncryptedPassportElement
      */
-    public function setReverseSide(PassportFile $reverse_side): EncryptedPassportElement
+    public function setReverseSide(?PassportFile $reverse_side): EncryptedPassportElement
     {
         $this->reverse_side = $reverse_side;
 
@@ -200,19 +202,19 @@ class EncryptedPassportElement
     }
 
     /**
-     * @return PassportFile
+     * @return PassportFile|null
      */
-    public function getSelfie(): PassportFile
+    public function getSelfie(): ?PassportFile
     {
         return $this->selfie;
     }
 
     /**
-     * @param PassportFile $selfie
+     * @param PassportFile|null $selfie
      *
      * @return EncryptedPassportElement
      */
-    public function setSelfie(PassportFile $selfie): EncryptedPassportElement
+    public function setSelfie(?PassportFile $selfie): EncryptedPassportElement
     {
         $this->selfie = $selfie;
 
@@ -220,19 +222,19 @@ class EncryptedPassportElement
     }
 
     /**
-     * @return PassportFile[]
+     * @return PassportFile[]|null
      */
-    public function getTranslation(): array
+    public function getTranslation(): ?array
     {
         return $this->translation;
     }
 
     /**
-     * @param PassportFile[] $translation
+     * @param PassportFile[]|null $translation
      *
      * @return EncryptedPassportElement
      */
-    public function setTranslation(array $translation): EncryptedPassportElement
+    public function setTranslation(?array $translation): EncryptedPassportElement
     {
         $this->translation = $translation;
 
@@ -240,19 +242,19 @@ class EncryptedPassportElement
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getHash(): string
+    public function getHash(): ?string
     {
         return $this->hash;
     }
 
     /**
-     * @param string $hash
+     * @param string|null $hash
      *
      * @return EncryptedPassportElement
      */
-    public function setHash(string $hash): EncryptedPassportElement
+    public function setHash(?string $hash): EncryptedPassportElement
     {
         $this->hash = $hash;
 

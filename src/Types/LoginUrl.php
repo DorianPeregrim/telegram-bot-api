@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace TelegramBotApi\Types;
 
@@ -15,19 +17,19 @@ class LoginUrl
     private string $url;
 
     /**
-     * @var string
+     * @var string|null
      */
-    private string $forwardText;
+    private ?string $forwardText = null;
 
     /**
-     * @var string
+     * @var string|null
      */
-    private string $botUsername;
+    private ?string $botUsername = null;
 
     /**
-     * @var bool
+     * @var bool|null
      */
-    private bool $requestWriteAccess;
+    private ?bool $requestWriteAccess = null;
 
     /**
      * @return string
@@ -50,19 +52,19 @@ class LoginUrl
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getForwardText(): string
+    public function getForwardText(): ?string
     {
         return $this->forwardText;
     }
 
     /**
-     * @param string $forwardText
+     * @param string|null $forwardText
      *
      * @return LoginUrl
      */
-    public function setForwardText(string $forwardText): LoginUrl
+    public function setForwardText(?string $forwardText): LoginUrl
     {
         $this->forwardText = $forwardText;
 
@@ -70,19 +72,19 @@ class LoginUrl
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getBotUsername(): string
+    public function getBotUsername(): ?string
     {
         return $this->botUsername;
     }
 
     /**
-     * @param string $botUsername
+     * @param string|null $botUsername
      *
      * @return LoginUrl
      */
-    public function setBotUsername(string $botUsername): LoginUrl
+    public function setBotUsername(?string $botUsername): LoginUrl
     {
         $this->botUsername = $botUsername;
 
@@ -90,19 +92,19 @@ class LoginUrl
     }
 
     /**
-     * @return bool
+     * @return bool|null
      */
-    public function isRequestWriteAccess(): bool
+    public function getRequestWriteAccess(): ?bool
     {
         return $this->requestWriteAccess;
     }
 
     /**
-     * @param bool $requestWriteAccess
+     * @param bool|null $requestWriteAccess
      *
      * @return LoginUrl
      */
-    public function setRequestWriteAccess(bool $requestWriteAccess): LoginUrl
+    public function setRequestWriteAccess(?bool $requestWriteAccess): LoginUrl
     {
         $this->requestWriteAccess = $requestWriteAccess;
 

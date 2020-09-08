@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace TelegramBotApi\Types;
 
@@ -15,6 +17,11 @@ class Audio
     private string $fileId;
 
     /**
+     * @var string
+     */
+    private string $fileUniqueId;
+
+    /**
      * @var int
      */
     private int $duration;
@@ -22,27 +29,27 @@ class Audio
     /**
      * @var string
      */
-    private string $performer;
+    private ?string $performer = null;
 
     /**
      * @var string
      */
-    private string $title;
+    private ?string $title = null;
 
     /**
      * @var string
      */
-    private string $mimeType;
+    private ?string $mimeType = null;
 
     /**
      * @var int
      */
-    private int $fileSize;
+    private ?int $fileSize = null;
 
     /**
      * @var PhotoSize
      */
-    private PhotoSize $thumb;
+    private ?PhotoSize $thumb = null;
 
     /**
      * @return string
@@ -60,6 +67,26 @@ class Audio
     public function setFileId(string $fileId): Audio
     {
         $this->fileId = $fileId;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFileUniqueId(): string
+    {
+        return $this->fileUniqueId;
+    }
+
+    /**
+     * @param string $fileUniqueId
+     *
+     * @return Audio
+     */
+    public function setFileUniqueId(string $fileUniqueId): Audio
+    {
+        $this->fileUniqueId = $fileUniqueId;
 
         return $this;
     }

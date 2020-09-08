@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace TelegramBotApi\Types;
 
@@ -15,19 +17,24 @@ class Voice
     private string $fileId;
 
     /**
+     * @var string
+     */
+    private string $fileUniqueId;
+
+    /**
      * @var int
      */
     private int $duration;
 
     /**
-     * @var string
+     * @var string|null
      */
-    private string $mimeType;
+    private ?string $mimeType = null;
 
     /**
-     * @var int
+     * @var int|null
      */
-    private int $fileSize;
+    private ?int $fileSize = null;
 
     /**
      * @return string
@@ -45,6 +52,26 @@ class Voice
     public function setFileId(string $fileId): Voice
     {
         $this->fileId = $fileId;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFileUniqueId(): string
+    {
+        return $this->fileUniqueId;
+    }
+
+    /**
+     * @param string $fileUniqueId
+     *
+     * @return Voice
+     */
+    public function setFileUniqueId(string $fileUniqueId): Voice
+    {
+        $this->fileUniqueId = $fileUniqueId;
 
         return $this;
     }
@@ -70,19 +97,19 @@ class Voice
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getMimeType(): string
+    public function getMimeType(): ?string
     {
         return $this->mimeType;
     }
 
     /**
-     * @param string $mimeType
+     * @param string|null $mimeType
      *
      * @return Voice
      */
-    public function setMimeType(string $mimeType): Voice
+    public function setMimeType(?string $mimeType): Voice
     {
         $this->mimeType = $mimeType;
 
@@ -90,19 +117,19 @@ class Voice
     }
 
     /**
-     * @return int
+     * @return int|null
      */
-    public function getFileSize(): int
+    public function getFileSize(): ?int
     {
         return $this->fileSize;
     }
 
     /**
-     * @param int $fileSize
+     * @param int|null $fileSize
      *
      * @return Voice
      */
-    public function setFileSize(int $fileSize): Voice
+    public function setFileSize(?int $fileSize): Voice
     {
         $this->fileSize = $fileSize;
 

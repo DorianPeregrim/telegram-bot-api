@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace TelegramBotApi\Types;
 
@@ -10,39 +12,39 @@ namespace TelegramBotApi\Types;
 class OrderInfo
 {
     /**
-     * @var string
+     * @var string|null
      */
-    private string $name;
+    private ?string $name = null;
 
     /**
-     * @var string
+     * @var string|null
      */
-    private string $phoneNumber;
+    private ?string $phoneNumber = null;
 
     /**
-     * @var string
+     * @var string|null
      */
-    private string $email;
+    private ?string $email = null;
 
     /**
-     * @var ShippingAddress
+     * @var ShippingAddress|null
      */
-    private ShippingAddress $shippingAddress;
+    private ?ShippingAddress $shippingAddress = null;
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getName(): string
+    public function getName(): ?string
     {
         return $this->name;
     }
 
     /**
-     * @param string $name
+     * @param string|null $name
      *
      * @return OrderInfo
      */
-    public function setName(string $name): OrderInfo
+    public function setName(?string $name): OrderInfo
     {
         $this->name = $name;
 
@@ -50,19 +52,19 @@ class OrderInfo
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getPhoneNumber(): string
+    public function getPhoneNumber(): ?string
     {
         return $this->phoneNumber;
     }
 
     /**
-     * @param string $phoneNumber
+     * @param string|null $phoneNumber
      *
      * @return OrderInfo
      */
-    public function setPhoneNumber(string $phoneNumber): OrderInfo
+    public function setPhoneNumber(?string $phoneNumber): OrderInfo
     {
         $this->phoneNumber = $phoneNumber;
 
@@ -70,19 +72,19 @@ class OrderInfo
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getEmail(): string
+    public function getEmail(): ?string
     {
         return $this->email;
     }
 
     /**
-     * @param string $email
+     * @param string|null $email
      *
      * @return OrderInfo
      */
-    public function setEmail(string $email): OrderInfo
+    public function setEmail(?string $email): OrderInfo
     {
         $this->email = $email;
 
@@ -90,19 +92,19 @@ class OrderInfo
     }
 
     /**
-     * @return ShippingAddress
+     * @return ShippingAddress|null
      */
-    public function getShippingAddress(): ShippingAddress
+    public function getShippingAddress(): ?ShippingAddress
     {
         return $this->shippingAddress;
     }
 
     /**
-     * @param ShippingAddress $shippingAddress
+     * @param ShippingAddress|null $shippingAddress
      *
      * @return OrderInfo
      */
-    public function setShippingAddress(ShippingAddress $shippingAddress): OrderInfo
+    public function setShippingAddress(?ShippingAddress $shippingAddress): OrderInfo
     {
         $this->shippingAddress = $shippingAddress;
 

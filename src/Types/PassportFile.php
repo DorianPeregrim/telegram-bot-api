@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace TelegramBotApi\Types;
 
@@ -13,6 +15,11 @@ class PassportFile
      * @var string
      */
     private string $fileId;
+
+    /**
+     * @var string
+     */
+    private string $fileUniqueId;
 
     /**
      * @var int
@@ -40,6 +47,26 @@ class PassportFile
     public function setFileId(string $fileId): PassportFile
     {
         $this->fileId = $fileId;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFileUniqueId(): string
+    {
+        return $this->fileUniqueId;
+    }
+
+    /**
+     * @param string $fileUniqueId
+     *
+     * @return PassportFile
+     */
+    public function setFileUniqueId(string $fileUniqueId): PassportFile
+    {
+        $this->fileUniqueId = $fileUniqueId;
 
         return $this;
     }

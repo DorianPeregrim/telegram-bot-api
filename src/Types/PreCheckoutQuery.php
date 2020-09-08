@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace TelegramBotApi\Types;
 
@@ -35,14 +37,14 @@ class PreCheckoutQuery
     private string $invoicePayload;
 
     /**
-     * @var string
+     * @var string|null
      */
-    private string $shippingOptionId;
+    private ?string $shippingOptionId = null;
 
     /**
-     * @var OrderInfo
+     * @var OrderInfo|null
      */
-    private OrderInfo $orderInfo;
+    private ?OrderInfo $orderInfo = null;
 
     /**
      * @return string
@@ -145,19 +147,19 @@ class PreCheckoutQuery
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getShippingOptionId(): string
+    public function getShippingOptionId(): ?string
     {
         return $this->shippingOptionId;
     }
 
     /**
-     * @param string $shippingOptionId
+     * @param string|null $shippingOptionId
      *
      * @return PreCheckoutQuery
      */
-    public function setShippingOptionId(string $shippingOptionId): PreCheckoutQuery
+    public function setShippingOptionId(?string $shippingOptionId): PreCheckoutQuery
     {
         $this->shippingOptionId = $shippingOptionId;
 
@@ -165,19 +167,19 @@ class PreCheckoutQuery
     }
 
     /**
-     * @return OrderInfo
+     * @return OrderInfo|null
      */
-    public function getOrderInfo(): OrderInfo
+    public function getOrderInfo(): ?OrderInfo
     {
         return $this->orderInfo;
     }
 
     /**
-     * @param OrderInfo $orderInfo
+     * @param OrderInfo|null $orderInfo
      *
      * @return PreCheckoutQuery
      */
-    public function setOrderInfo(OrderInfo $orderInfo): PreCheckoutQuery
+    public function setOrderInfo(?OrderInfo $orderInfo): PreCheckoutQuery
     {
         $this->orderInfo = $orderInfo;
 

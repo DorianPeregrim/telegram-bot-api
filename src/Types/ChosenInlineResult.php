@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace TelegramBotApi\Types;
 
@@ -20,14 +22,14 @@ class ChosenInlineResult
     private User $from;
 
     /**
-     * @var Location
+     * @var Location|null
      */
-    private Location $location;
+    private ?Location $location = null;
 
     /**
-     * @var string
+     * @var string|null
      */
-    private string $inlineMessageId;
+    private ?string $inlineMessageId = null;
 
     /**
      * @var string
@@ -75,19 +77,19 @@ class ChosenInlineResult
     }
 
     /**
-     * @return Location
+     * @return Location|null
      */
-    public function getLocation(): Location
+    public function getLocation(): ?Location
     {
         return $this->location;
     }
 
     /**
-     * @param Location $location
+     * @param Location|null $location
      *
      * @return ChosenInlineResult
      */
-    public function setLocation(Location $location): ChosenInlineResult
+    public function setLocation(?Location $location): ChosenInlineResult
     {
         $this->location = $location;
 
@@ -95,19 +97,19 @@ class ChosenInlineResult
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getInlineMessageId(): string
+    public function getInlineMessageId(): ?string
     {
         return $this->inlineMessageId;
     }
 
     /**
-     * @param string $inlineMessageId
+     * @param string|null $inlineMessageId
      *
      * @return ChosenInlineResult
      */
-    public function setInlineMessageId(string $inlineMessageId): ChosenInlineResult
+    public function setInlineMessageId(?string $inlineMessageId): ChosenInlineResult
     {
         $this->inlineMessageId = $inlineMessageId;
 

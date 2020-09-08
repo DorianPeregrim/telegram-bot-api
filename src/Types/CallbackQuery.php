@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace TelegramBotApi\Types;
 
@@ -20,14 +22,14 @@ class CallbackQuery
     private User $from;
 
     /**
-     * @var Message
+     * @var Message|null
      */
-    private Message $message;
+    private ?Message $message = null;
 
     /**
-     * @var string
+     * @var string|null
      */
-    private string $inlineMessageId;
+    private ?string $inlineMessageId = null;
 
     /**
      * @var string
@@ -35,14 +37,14 @@ class CallbackQuery
     private string $chatInstance;
 
     /**
-     * @var string
+     * @var string|null
      */
-    private string $data;
+    private ?string $data = null;
 
     /**
-     * @var string
+     * @var string|null
      */
-    private string $gameShortName;
+    private ?string $gameShortName = null;
 
     /**
      * @return string
@@ -85,19 +87,19 @@ class CallbackQuery
     }
 
     /**
-     * @return Message
+     * @return Message|null
      */
-    public function getMessage(): Message
+    public function getMessage(): ?Message
     {
         return $this->message;
     }
 
     /**
-     * @param Message $message
+     * @param Message|null $message
      *
      * @return CallbackQuery
      */
-    public function setMessage(Message $message): CallbackQuery
+    public function setMessage(?Message $message): CallbackQuery
     {
         $this->message = $message;
 
@@ -105,19 +107,19 @@ class CallbackQuery
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getInlineMessageId(): string
+    public function getInlineMessageId(): ?string
     {
         return $this->inlineMessageId;
     }
 
     /**
-     * @param string $inlineMessageId
+     * @param string|null $inlineMessageId
      *
      * @return CallbackQuery
      */
-    public function setInlineMessageId(string $inlineMessageId): CallbackQuery
+    public function setInlineMessageId(?string $inlineMessageId): CallbackQuery
     {
         $this->inlineMessageId = $inlineMessageId;
 
@@ -145,19 +147,19 @@ class CallbackQuery
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getData(): string
+    public function getData(): ?string
     {
         return $this->data;
     }
 
     /**
-     * @param string $data
+     * @param string|null $data
      *
      * @return CallbackQuery
      */
-    public function setData(string $data): CallbackQuery
+    public function setData(?string $data): CallbackQuery
     {
         $this->data = $data;
 
@@ -165,19 +167,19 @@ class CallbackQuery
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getGameShortName(): string
+    public function getGameShortName(): ?string
     {
         return $this->gameShortName;
     }
 
     /**
-     * @param string $gameShortName
+     * @param string|null $gameShortName
      *
      * @return CallbackQuery
      */
-    public function setGameShortName(string $gameShortName): CallbackQuery
+    public function setGameShortName(?string $gameShortName): CallbackQuery
     {
         $this->gameShortName = $gameShortName;
 

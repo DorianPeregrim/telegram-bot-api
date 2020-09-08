@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace TelegramBotApi\Types;
 
@@ -25,19 +27,19 @@ class Game
     private array $photo;
 
     /**
-     * @var string
+     * @var string|null
      */
-    private string $text;
+    private ?string $text = null;
 
     /**
-     * @var MessageEntity[]
+     * @var MessageEntity[]|null
      */
-    private array $textEntities;
+    private ?array $textEntities = null;
 
     /**
-     * @var Animation
+     * @var Animation|null
      */
-    private Animation $animation;
+    private ?Animation $animation = null;
 
     /**
      * @return string
@@ -100,19 +102,19 @@ class Game
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getText(): string
+    public function getText(): ?string
     {
         return $this->text;
     }
 
     /**
-     * @param string $text
+     * @param string|null $text
      *
      * @return Game
      */
-    public function setText(string $text): Game
+    public function setText(?string $text): Game
     {
         $this->text = $text;
 
@@ -120,19 +122,19 @@ class Game
     }
 
     /**
-     * @return MessageEntity[]
+     * @return MessageEntity[]|null
      */
-    public function getTextEntities(): array
+    public function getTextEntities(): ?array
     {
         return $this->textEntities;
     }
 
     /**
-     * @param MessageEntity[] $textEntities
+     * @param MessageEntity[]|null $textEntities
      *
      * @return Game
      */
-    public function setTextEntities(array $textEntities): Game
+    public function setTextEntities(?array $textEntities): Game
     {
         $this->textEntities = $textEntities;
 
@@ -140,19 +142,19 @@ class Game
     }
 
     /**
-     * @return Animation
+     * @return Animation|null
      */
-    public function getAnimation(): Animation
+    public function getAnimation(): ?Animation
     {
         return $this->animation;
     }
 
     /**
-     * @param Animation $animation
+     * @param Animation|null $animation
      *
      * @return Game
      */
-    public function setAnimation(Animation $animation): Game
+    public function setAnimation(?Animation $animation): Game
     {
         $this->animation = $animation;
 

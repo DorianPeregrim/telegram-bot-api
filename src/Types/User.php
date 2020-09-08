@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace TelegramBotApi\Types;
 
@@ -25,19 +27,19 @@ class User
     private string $firstName;
 
     /**
-     * @var string
+     * @var string|null
      */
-    private string $lastName;
+    private ?string $lastName = null;
 
     /**
-     * @var string
+     * @var string|null
      */
-    private string $username;
+    private ?string $username = null;
 
     /**
-     * @var string
+     * @var string|null
      */
-    private string $languageCode;
+    private ?string $languageCode = null;
 
     /**
      * @return int
@@ -100,19 +102,19 @@ class User
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getLastName(): string
+    public function getLastName(): ?string
     {
         return $this->lastName;
     }
 
     /**
-     * @param string $lastName
+     * @param string|null $lastName
      *
      * @return User
      */
-    public function setLastName(string $lastName): User
+    public function setLastName(?string $lastName): User
     {
         $this->lastName = $lastName;
 
@@ -120,19 +122,19 @@ class User
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getUsername(): string
+    public function getUsername(): ?string
     {
         return $this->username;
     }
 
     /**
-     * @param string $username
+     * @param string|null $username
      *
      * @return User
      */
-    public function setUsername(string $username): User
+    public function setUsername(?string $username): User
     {
         $this->username = $username;
 
@@ -140,19 +142,19 @@ class User
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getLanguageCode(): string
+    public function getLanguageCode(): ?string
     {
         return $this->languageCode;
     }
 
     /**
-     * @param string $languageCode
+     * @param string|null $languageCode
      *
      * @return User
      */
-    public function setLanguageCode(string $languageCode): User
+    public function setLanguageCode(?string $languageCode): User
     {
         $this->languageCode = $languageCode;
 

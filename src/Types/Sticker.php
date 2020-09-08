@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace TelegramBotApi\Types;
 
@@ -10,19 +12,24 @@ namespace TelegramBotApi\Types;
 class Sticker
 {
     /**
-     * @var
+     * @var string
      */
-    private $fileId;
+    private string $fileId;
 
     /**
-     * @var
+     * @var string
      */
-    private $width;
+    private string $fileUniqueId;
 
     /**
-     * @var
+     * @var int
      */
-    private $height;
+    private int $width;
+
+    /**
+     * @var int
+     */
+    private int $height;
 
     /**
      * @var bool
@@ -32,42 +39,42 @@ class Sticker
     /**
      * @var PhotoSize
      */
-    private PhotoSize $thumb;
+    private ?PhotoSize $thumb = null;
 
     /**
-     * @var
+     * @var string
      */
-    private $emoji;
+    private ?string $emoji = null;
 
     /**
-     * @var
+     * @var string
      */
-    private $setName;
+    private ?string $setName = null;
 
     /**
      * @var MaskPosition
      */
-    private MaskPosition $maskPosition;
+    private ?MaskPosition $maskPosition = null;
 
     /**
-     * @var
+     * @var int
      */
-    private $fileSize;
+    private ?int $fileSize = null;
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function getFileId()
+    public function getFileId(): string
     {
         return $this->fileId;
     }
 
     /**
-     * @param mixed $fileId
+     * @param string $fileId
      *
      * @return Sticker
      */
-    public function setFileId($fileId)
+    public function setFileId(string $fileId): Sticker
     {
         $this->fileId = $fileId;
 
@@ -75,19 +82,39 @@ class Sticker
     }
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function getWidth()
+    public function getFileUniqueId(): string
+    {
+        return $this->fileUniqueId;
+    }
+
+    /**
+     * @param string $fileUniqueId
+     *
+     * @return Sticker
+     */
+    public function setFileUniqueId(string $fileUniqueId): Sticker
+    {
+        $this->fileUniqueId = $fileUniqueId;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getWidth(): int
     {
         return $this->width;
     }
 
     /**
-     * @param mixed $width
+     * @param int $width
      *
      * @return Sticker
      */
-    public function setWidth($width)
+    public function setWidth(int $width): Sticker
     {
         $this->width = $width;
 
@@ -95,19 +122,19 @@ class Sticker
     }
 
     /**
-     * @return mixed
+     * @return int
      */
-    public function getHeight()
+    public function getHeight(): int
     {
         return $this->height;
     }
 
     /**
-     * @param mixed $height
+     * @param int $height
      *
      * @return Sticker
      */
-    public function setHeight($height)
+    public function setHeight(int $height): Sticker
     {
         $this->height = $height;
 
@@ -155,19 +182,19 @@ class Sticker
     }
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function getEmoji()
+    public function getEmoji(): string
     {
         return $this->emoji;
     }
 
     /**
-     * @param mixed $emoji
+     * @param string $emoji
      *
      * @return Sticker
      */
-    public function setEmoji($emoji)
+    public function setEmoji(string $emoji): Sticker
     {
         $this->emoji = $emoji;
 
@@ -175,19 +202,19 @@ class Sticker
     }
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function getSetName()
+    public function getSetName(): string
     {
         return $this->setName;
     }
 
     /**
-     * @param mixed $setName
+     * @param string $setName
      *
      * @return Sticker
      */
-    public function setSetName($setName)
+    public function setSetName(string $setName): Sticker
     {
         $this->setName = $setName;
 
@@ -215,19 +242,19 @@ class Sticker
     }
 
     /**
-     * @return mixed
+     * @return int
      */
-    public function getFileSize()
+    public function getFileSize(): int
     {
         return $this->fileSize;
     }
 
     /**
-     * @param mixed $fileSize
+     * @param int $fileSize
      *
      * @return Sticker
      */
-    public function setFileSize($fileSize)
+    public function setFileSize(int $fileSize): Sticker
     {
         $this->fileSize = $fileSize;
 
