@@ -7,6 +7,9 @@
     "bot",
     "api"
   ],
+  "version": "dev-master",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "license": "MIT",
   "authors": [
     {
@@ -15,10 +18,10 @@
     }
   ],
   "require": {
-    "php": "^8.0",
-    "guzzlehttp/guzzle": "^7.0 || ^6.0",
+    "php": "^8.4",
+    "guzzlehttp/guzzle": "^7.9",
     "ext-json": "*",
-    "nesbot/carbon": "^2.36"
+    "nesbot/carbon": "^3.8"
   },
   "require-dev": {
   },

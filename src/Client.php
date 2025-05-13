@@ -8,6 +8,7 @@ use BadMethodCallException;
 use Exception;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Exception\RequestException;
+use TelegramBotApi\DTO\CreateInvoiceLink;
 use TelegramBotApi\Exceptions\TelegramException;
 
 /**
@@ -86,12 +87,12 @@ use TelegramBotApi\Exceptions\TelegramException;
  */
 class Client
 {
-    const API_URL_TMPL = 'https://api.telegram.org/bot%s/';
+    const string API_URL_TMPL = 'https://api.telegram.org/bot%s/';
 
-    const PARSE_MODE_MARKDOWN = 'Markdown';
-    const PARSE_MODE_HTML     = 'HTML';
+    const string PARSE_MODE_MARKDOWN = 'Markdown';
+    const string PARSE_MODE_HTML     = 'HTML';
 
-    private const AVAILABLE_METHODS = [
+    private const array AVAILABLE_METHODS = [
         'getUpdates',
         'setWebhook',
         'deleteWebhook',
@@ -155,6 +156,7 @@ class Client
         'deleteStickerFromSet',
         'setStickerSetThumb',
         'sendInvoice',
+        'createInvoiceLink',
         'answerShippingQuery',
         'answerPreCheckoutQuery',
         'sendGame',
@@ -198,6 +200,19 @@ class Client
 
         return $this->makeRequest($method, $params[0] ?? []);
 
+    }
+
+    /**
+     * @param CreateInvoiceLink $data
+     * @return array
+     * @throws GuzzleException
+     * @throws TelegramException
+     */
+    public function createInvoiceLink(CreateInvoiceLink $data): array
+    {
+        $array = (array) $data;
+        $array['prices'] = json_encode($data->prices);
+        return $this->makeRequest('createInvoiceLink',  $array);
     }
 
     /**

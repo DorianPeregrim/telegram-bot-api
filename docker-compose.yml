@@ -1,6 +1,8 @@
-php:
-  image: dorianperegrim/laravel-php:7.4-cli
-  volumes:
-    - .:/var/www
-  working_dir: /var/www
-  command: sleep 1d
+services:
+
+  php:
+    image: library/composer:2.8
+    volumes:
+      - .:/var/www
+    working_dir: /var/www
+    command: sleep 1d
